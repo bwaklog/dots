@@ -28,11 +28,11 @@ do
                               click_script="$SPACE_CLICK_SCRIPT"
 done
 
-sketchybar   --add item       separator left                          \
-             --set separator  icon=                                  \
-                              icon.font="Hack Nerd Font:Regular:16.0" \
-                              background.padding_left=26              \
-                              background.padding_right=15             \
-                              label.drawing=off                       \
-                              associated_display=active               \
-                              icon.color=$WHITE
+# sketchybar   --add item       separator left                          \
+#              --set separator  icon=                                  \
+#                               icon.font="Hack Nerd Font:Regular:16.0" \
+#                               background.padding_left=26              \
+#                               background.padding_right=15             \
+#                               label.drawing=off                       \
+#                               associated_display=active               \
+#                               icon.color=$WHITE
