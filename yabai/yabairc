@@ -18,8 +18,8 @@ yabai -m signal --add event=display_removed action='echo "refresh" | nc -U /tmp/
 $HOME/.config/yabai/create_spaces.sh
 
 # yabai -m config external_bar               all:39:0     \
-yabai -m config external_bar               all:0:0     \
-                window_border              on           \
+yabai -m config external_bar               all:0:45     \
+                window_border              off          \
                 mouse_follows_focus        off          \
                 focus_follows_mouse        off          \
                 window_placement           second_child \
@@ -29,7 +29,7 @@ yabai -m config external_bar               all:0:0     \
                 window_opacity_duration    0.15         \
                 active_window_opacity      1.0          \
                 normal_window_opacity      0.95         \
-                window_border_width        4            \
+                window_border_width        1            \
                 window_border_radius       11           \
                 window_animation_duration  0.15         \
                 active_window_border_color 0xffe1e3e4   \
@@ -41,12 +41,12 @@ yabai -m config external_bar               all:0:0     \
                 mouse_action1              move         \
                 mouse_action2              resize       \
                 mouse_drop_action          swap         \
-                                                        \
-                top_padding                10           \
-                bottom_padding             10           \
-                left_padding               10           \
-                right_padding              10           \
-                window_gap                 8
+                                                       \
+                top_padding                4           \
+                bottom_padding             4           \
+                left_padding               4           \
+                right_padding              4           \
+                window_gap                 4
 
 # Exclude problematic apps from being managed:
 yabai -m rule --add app="^(LuLu|Vimac|Calculator|Software Update|Dictionary|VLC|System Preferences|zoom.us|Photo Booth|Archive Utility|Python|LibreOffice|App Store|Steam|Alfred|Activity Monitor|Reminders|Contacts|Messages|Signal|Clock|Calendar|Notes|Fig)$" manage=off
@@ -58,6 +58,8 @@ yabai -m rule --add label="Safari" app="^Spotify$" manage=off
 yabai -m rule --add label="Finder" app="^Finder$" manage=off
 yabai -m rule --add label="System Settings" app="^System Settings$" manage=off
 yabai -m rule --add label="GitHub Desktop" app="^GitHub Desktop$" manage=off
+yabai -m rule --add label="Pika" app="^Pika$" manage=off
+yabai -m rule --add label="FaceTime" app="^FaceTime$" manage=off
 # yabai -m rule --add label="Notion" app="^Notion$" manage=off
 yabai -m rule --add label="Signal" app="^Signal$" manage=off
 yabai -m rule --add label="Messages" app="^Messages$" manage=off
@@ -69,8 +71,9 @@ yabai -m rule --add label="Maps" app="^Maps$" manage=off
 yabai -m rule --add label="Mail" app="^Mail$" manage=off
 yabai -m rule --add label="Contacts" app="^Contacts$" manage=off
 yabai -m rule --add label="Prefrences" app="^Prefrences$" manage=off
-
-
+yabai -m rule --add label="Chess" app="^Chess$" manage=off
+yabai -m rule --add label="Tot" app="^Tot$" manage=off
+yabai -m rule --add label="AppCleaner" app="^AppCleaner$" manage=off
 
 
 yabai -m config layout bsp
