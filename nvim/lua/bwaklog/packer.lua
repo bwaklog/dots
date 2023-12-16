@@ -10,23 +10,47 @@ return require('packer').startup(function(use)
   -- Simple plugins can be specified as strings
   use 'rstacruz/vim-closer'
 
+  use 'tamton-aquib/duck.nvim'
+
+  use {
+      'nvim-lualine/lualine.nvim',
+      requires = { 'nvim-tree/nvim-web-devicons', opt = true }
+  }
+
+  use 'karb94/neoscroll.nvim'
+
   use {
 	  'nvim-telescope/telescope.nvim', tag = '0.1.5',
 	  -- or                            , branch = '0.1.x',
 	  requires = { {'nvim-lua/plenary.nvim'} }
   }
-	
+
   use({
-  	'rose-pine/neovim',
-	as = 'rose-pine',
-	config = function()
-		vim.cmd('colorscheme rose-pine')
-	end
+      'rose-pine/neovim',
+      as = 'rose-pine',
+      config = function()		
+          vim.cmd('colorscheme rose-pine')
+      end
   })
+
+  use { 
+      'shaunsingh/solarized.nvim',
+  }
+  use ({ 
+      "rebelot/kanagawa.nvim",
+      as = 'kanagawao',
+      config = function()
+          vim.cmd('colorscheme kanagawa-dragon')
+      end
+  })
+
+  use({ 'toppair/peek.nvim', run = 'deno task --quiet build:fast' })
 
   use('nvim-treesitter/nvim-treesitter', { run = ':TSUpdate'})
   use('nvim-treesitter/playground')
   use('tpope/vim-fugitive')
+
+  use('iamcco/markdown-preview.nvim')
 
   use {
 	  'VonHeikemen/lsp-zero.nvim',
@@ -48,5 +72,13 @@ return require('packer').startup(function(use)
   use {"akinsho/toggleterm.nvim", tag="*", config = function()
 	require("toggleterm").setup()
   end}
+
+
+  use {
+      "klen/nvim-test",
+      config = function()
+          require('nvim-test').setup()
+      end
+  }
 
 end)
