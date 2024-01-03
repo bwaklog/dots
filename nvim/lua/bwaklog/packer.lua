@@ -10,7 +10,6 @@ return require('packer').startup(function(use)
   -- Simple plugins can be specified as strings
   use 'rstacruz/vim-closer'
 
-  use 'tamton-aquib/duck.nvim'
 
   use {
       'nvim-lualine/lualine.nvim',
@@ -18,6 +17,16 @@ return require('packer').startup(function(use)
   }
 
   use 'karb94/neoscroll.nvim'
+  use 'ThePrimeagen/vim-be-good'
+
+  use {
+    'tamton-aquib/duck.nvim',
+    config = function()
+        vim.keymap.set('n', '<leader>dd', function() require("duck").hatch('🐱', 2) end, {})
+        vim.keymap.set('n', '<leader>dk', function() require("duck").cook() end, {})
+    end
+}
+
 
   use {
 	  'nvim-telescope/telescope.nvim', tag = '0.1.5',
@@ -28,9 +37,9 @@ return require('packer').startup(function(use)
   use({
       'rose-pine/neovim',
       as = 'rose-pine',
-      config = function()		
-          vim.cmd('colorscheme rose-pine')
-      end
+ --     config = function()		
+ --         vim.cmd('colorscheme rose-pine')
+ --     end
   })
 
   use { 
@@ -40,17 +49,61 @@ return require('packer').startup(function(use)
       "rebelot/kanagawa.nvim",
       as = 'kanagawao',
       config = function()
-          vim.cmd('colorscheme kanagawa-dragon')
-      end
-  })
+              vim.cmd('colorscheme kanagawa')
+          end
+      })
+
+
+      use ({
+          'bluz71/vim-moonfly-colors',
+          as = 'moonfly',
+          --config = function()
+          --    vim.cmd('colorscheme moonfly')
+          --end
+      })
 
   use({ 'toppair/peek.nvim', run = 'deno task --quiet build:fast' })
 
   use('nvim-treesitter/nvim-treesitter', { run = ':TSUpdate'})
   use('nvim-treesitter/playground')
   use('tpope/vim-fugitive')
+  use('wakatime/vim-wakatime')
 
-  use('iamcco/markdown-preview.nvim')
+
+  -- install without yarn or npm
+  use({
+      "iamcco/markdown-preview.nvim",
+      run = function() vim.fn["mkdp#util#install"]() end,
+  })
+
+  use({ "iamcco/markdown-preview.nvim", run = "cd app && npm install", setup = function() vim.g.mkdp_filetypes = { "markdown" } end, ft = { "markdown" }, })
+
+  use({
+      "epwalsh/obsidian.nvim",
+      tag = "*",  -- recommended, use latest release instead of latest commit
+      requires = {
+          -- Required.
+          "nvim-lua/plenary.nvim",
+
+          -- see below for full list of optional dependencies 👇
+      },
+      config = function()
+          require("obsidian").setup({
+              workspaces = {
+                  {
+                      name = "college",
+                      path = "/Users/adityahegde/Library/Mobile Documents/iCloud~md~obsidian/Documents/College/College",
+                  },
+                  {
+                      name = "personal",
+                      path = "/Users/adityahegde/Library/Mobile Documents/iCloud~md~obsidian/Documents/Waffles",
+                  },
+              },
+
+              -- see below for full list of options 👇
+          })
+      end,
+  })
 
   use {
 	  'VonHeikemen/lsp-zero.nvim',
@@ -65,9 +118,18 @@ return require('packer').startup(function(use)
 		  -- Autocompletion
 		  {'hrsh7th/nvim-cmp'},
 		  {'hrsh7th/cmp-nvim-lsp'},
-		  {'L3MON4D3/LuaSnip'},
+		  -- {'L3MON4D3/LuaSnip'},
+
 	  }
   }
+
+  use({
+      "L3MON4D3/LuaSnip",
+      -- follow latest release.
+      tag = "v2.*", -- Replace <CurrentMajor> by the latest released major (first number of latest release)
+      -- install jsregexp (optional!:).
+      run = "make install_jsregexp"
+  })
 
   use {"akinsho/toggleterm.nvim", tag="*", config = function()
 	require("toggleterm").setup()
