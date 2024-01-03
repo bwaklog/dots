@@ -16,23 +16,35 @@ require('mason-lspconfig').setup({
 })
 
 local cmp = require('cmp')
-local cmp_action = require('lsp-zero').cmp_action()
 
 cmp.setup({
-	-- Enter key to confirm completion
-	-- ['<CR>'] = cmp.mapping.confirm({ select = true }),
-	['<Tab>'] = cmp.mapping.confirm({ select = false, insert = true}),
-
-	-- Ctrl + Sapce to trigger completion menu
-	['<C-Space>'] = cmp.mapping.complete(),
-	
-	-- Navigate between snippet palceholder
-	['<C-f>'] = cmp_action.luasnip_jump_forward(),
-	['<C-b>'] = cmp_action.luasnip_jump_backward(),
-
-
-	-- Scroll up and down in the completion documentation
-	['<C-u>'] = cmp.mapping.scroll_docs(-4),
-	['C-d'] = cmp.mapping.scroll_docs(4),
-	
+    sources = {
+        {name = 'nvim_lsp'},
+        {name = 'luasnip'},
+    },
+    mapping = {
+        ['C-y'] = cmp.mapping.confirm({select=false}),
+        ['<C-e>'] = cmp.mapping.abort(),
+        ['<Up>'] = cmp.mapping.select_prev_item({behavior = 'select'}),
+        ['<Down>'] = cmp.mapping.select_next_item({behavior = 'select'}),
+        ['<C-p>'] = cmp.mapping(function()
+            if cmp.visible() then
+                cmp.select_prev_item({behaviour='insert'})
+            else
+                cmp.complete()
+            end
+        end),
+        ['C-n'] = cmp.mapping(function()
+            if cmp.visible() then
+                cmp.select_next_item({behaviour='insert'})
+            else
+                cmp.complete()
+            end
+        end),
+    },
+    --snippet = {
+    --    expand = function(args)
+    --        require('lunasnip').lsp_expand(args.body)
+    --    end,
+    --},
 })
