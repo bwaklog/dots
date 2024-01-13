@@ -90,8 +90,26 @@ function quote_cow() {
 
 quote_cow
 
+# following functions are to quickly access some directories I
+# frequently use for storing my notes
+function orgDir() {
+    cd ~/Library/Mobile\ Documents/iCloud~com\~appsonthemove\~beorg/Documents/org
+}
+
+function localCollegeDir() {
+    cd ~/Documents/PESU\ Local
+}
+
+function cloudCollegeDir() {
+    cd ~/Library/Mobile\ Documents/com\~apple\~CloudDocs/PESU 
+}
+
+function obsidianDir() {
+   cd ~/Library/Mobile\ Documents/iCloud\~md\~obsidian/Documents/College/College 
+}
+
 # user defined functions
-# got from @bashbunni -> https://github.com/bashbunni
+# Configuration borrowed from bashbunni
 function doit() {
     if [ -z "$1" ]; then
         echo "Usage : doit <time-in-minutes>"

@@ -18,6 +18,9 @@ return require('packer').startup(function(use)
 
   use 'karb94/neoscroll.nvim'
   use 'ThePrimeagen/vim-be-good'
+  use 'ThePrimeagen/harpoon'
+
+  use 'lervag/vimtex'
 
   use {
     'tamton-aquib/duck.nvim',
@@ -37,19 +40,19 @@ return require('packer').startup(function(use)
   use({
       'rose-pine/neovim',
       as = 'rose-pine',
- --     config = function()		
- --         vim.cmd('colorscheme rose-pine')
- --     end
+      --config = function()		
+      --    vim.cmd('colorscheme rose-pine')
+      --end
   })
 
   use { 
       'shaunsingh/solarized.nvim',
   }
-  use ({ 
+use ({ 
       "rebelot/kanagawa.nvim",
       as = 'kanagawao',
       config = function()
-              vim.cmd('colorscheme kanagawa')
+              vim.cmd('colorscheme kanagawa-dragon')
           end
       })
 
@@ -68,6 +71,11 @@ return require('packer').startup(function(use)
   use('nvim-treesitter/playground')
   use('tpope/vim-fugitive')
   use('wakatime/vim-wakatime')
+
+  use {'nvim-orgmode/orgmode', config = function()
+      require('orgmode').setup{}
+  end
+    }
 
 
   -- install without yarn or npm
