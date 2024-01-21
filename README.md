@@ -11,3 +11,5 @@
     └── pack
     └── plugin
 ```
+
+![nvim setup](https://i.imgur.com/5LzKwdS.jpg)
