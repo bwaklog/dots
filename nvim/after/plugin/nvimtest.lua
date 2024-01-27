@@ -24,5 +24,6 @@ require('nvim-test').setup {
     rust = "nvim-test.runners.cargo-test",
     typescript = "nvim-test.runners.jest",
     typescriptreact = "nvim-test.runners.jest",
-  }
+  },
+  vim.api.nvim_set_keymap('n', '<space>rt', '<cmd>TestFile<CR>', { noremap = true, silent = true })
 }
