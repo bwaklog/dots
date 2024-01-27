@@ -1,4 +1,4 @@
--- This file can be loaded by calling `lua require('plugins')` from your init.vim
+-- This file can be loaded by calling `lua require('plugins')` from your init.vimpacker
 
 -- Only required if you have packer configured as `opt`
 vim.cmd [[packadd packer.nvim]]
@@ -52,7 +52,7 @@ use ({
       "rebelot/kanagawa.nvim",
       as = 'kanagawao',
       config = function()
-              vim.cmd('colorscheme kanagawa-dragon')
+              vim.cmd('colorscheme kanagawa')
           end
       })
 
@@ -78,10 +78,20 @@ use ({
     }
 
 
+
+
   -- install without yarn or npm
   use({
       "iamcco/markdown-preview.nvim",
       run = function() vim.fn["mkdp#util#install"]() end,
+  })
+
+  use({
+    "folke/noice.nvim",
+    requires = {
+        "MunifTanjim/nui.nvim",
+        "rcarriga/nvim-notify",
+    }
   })
 
   use({ "iamcco/markdown-preview.nvim", run = "cd app && npm install", setup = function() vim.g.mkdp_filetypes = { "markdown" } end, ft = { "markdown" }, })
