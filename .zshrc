@@ -17,6 +17,7 @@ export ZSH="$HOME/.oh-my-zsh"
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 #ZSH_THEME="half-life"
 ZSH_THEME="powerlevel10k/powerlevel10k"
+PROMPT="[\u@\h \W]\$ "
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -78,7 +79,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git colored-man-pages emoji-clock macos copyfile copypath)
+plugins=()
 
 source $ZSH/oh-my-zsh.sh
 
@@ -90,8 +91,6 @@ function quote_cow() {
 
 quote_cow
 
-# following functions are to quickly access some directories I
-# frequently use for storing my notes
 function orgDir() {
     cd ~/Library/Mobile\ Documents/iCloud~com\~appsonthemove\~beorg/Documents/org
 }
@@ -105,11 +104,10 @@ function cloudCollegeDir() {
 }
 
 function obsidianDir() {
-   cd ~/Library/Mobile\ Documents/iCloud\~md\~obsidian/Documents/College/College 
+   cd ~/Library/Mobile\ Documents/iCloud\~md\~obsidian/Documents/College
 }
 
 # user defined functions
-# Configuration borrowed from bashbunni
 function doit() {
     if [ -z "$1" ]; then
         echo "Usage : doit <time-in-minutes>"
@@ -151,3 +149,21 @@ function doit() {
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+# >>> juliaup initialize >>>
+
+# !! Contents within this block are managed by juliaup !!
+
+path=('/Users/adityahegde/.juliaup/bin' $path)
+export PATH
+
+# <<< juliaup initialize <<<
+
+# bun completions
+[ -s "/Users/adityahegde/.bun/_bun" ] && source "/Users/adityahegde/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+
+PATH=~/.console-ninja/.bin:$PATH
