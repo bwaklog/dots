@@ -1,5 +1,16 @@
+
+require("catppuccin").setup({
+    flavour = "mocha",
+    transparent_background = true, -- enable this to make the background
+    styles = {
+        comments = { "italic" },
+        functions = { "italic" },
+        keywords = { "italic" },
+    },
+})
+
 function ColorMyPencil(color)
-    color = color or "kanagawa"
+    color = color or "catppuccin"
     vim.cmd.colorscheme(color)
 
     vim.api.nvim_set_hl(0, "Normal", { bg = "none"}) 
