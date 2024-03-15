@@ -5,6 +5,10 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
@@ -16,8 +20,11 @@ export ZSH="$HOME/.oh-my-zsh"
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 #ZSH_THEME="half-life"
-ZSH_THEME="powerlevel10k/powerlevel10k"
-PROMPT="[\u@\h \W]\$ "
+# PROMPT='\[\e[0;36m\]┌─\[\e[1;37m\][\u@\h]\[\e[0m\]\[\e[0;36m\]─\[\e[0;93m\](\w)\n\[\e[0;36m\]└─\[\e[1;32m\][\A]\[\e[0m\]\$ '
+# source ~/.git-prompt.sh
+# PS1="[%m@%1d]$(__git_ps1)$ "
+
+
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -89,7 +96,8 @@ function quote_cow() {
     fortune | cowsay
 }
 
-quote_cow
+# quote_cow
+echo -e "\\033[48;5;95;38;5;214mhello adi\\033[0m"
 
 function orgDir() {
     cd ~/Library/Mobile\ Documents/iCloud~com\~appsonthemove\~beorg/Documents/org
@@ -123,6 +131,9 @@ function doit() {
 }
 
 # export MANPATH="/usr/local/man:$MANPATH"
+source "/Users/adityahegde/emsdk/emsdk_env.sh"
+EMSDK_QUIET=1
+
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
@@ -147,7 +158,6 @@ function doit() {
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # >>> juliaup initialize >>>
@@ -156,6 +166,7 @@ source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 path=('/Users/adityahegde/.juliaup/bin' $path)
 export PATH
+# EMSDK_QUIET=1
 
 # <<< juliaup initialize <<<
 
@@ -167,3 +178,12 @@ export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 
 PATH=~/.console-ninja/.bin:$PATH
+
+
+export GPG_TTY=$(tty)
+source ~/powerlevel10k/powerlevel10k.zsh-theme
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+eval $(thefuck --alias)
