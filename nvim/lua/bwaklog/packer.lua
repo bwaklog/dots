@@ -20,7 +20,7 @@ return require('packer').startup(function(use)
     use 'ThePrimeagen/harpoon'
 
 
-   use {
+    use {
         'tamton-aquib/duck.nvim',
         config = function()
             vim.keymap.set('n', '<leader>dd', function() require("duck").hatch('🐱', 2) end, {})
@@ -34,6 +34,7 @@ return require('packer').startup(function(use)
         -- or                            , branch = '0.1.x',
         requires = { {'nvim-lua/plenary.nvim'} }
     }
+
 
     use({
         'rose-pine/neovim',
@@ -67,9 +68,11 @@ return require('packer').startup(function(use)
                 use ({    
                     "catppuccin/nvim",
                     as = "catppuccin", 
+                    --[[
                     config = function()
                         vim.cmd('colorscheme catppuccin')
                     end
+                    ]]--
                 })
 
                 use('nvim-treesitter/nvim-treesitter', { run = ':TSUpdate'})
@@ -90,7 +93,7 @@ return require('packer').startup(function(use)
                     end,
                 })
 
-                
+
                 use ({
                     "nvim-neo-tree/neo-tree.nvim",
                     branch = "v3.x",
@@ -105,53 +108,57 @@ return require('packer').startup(function(use)
                     end
                 })
 
-                    -- These optional plugins should be loaded directly because of a bug in Packer lazy loading
-                    use 'nvim-tree/nvim-web-devicons' -- OPTIONAL: for file icons
-                    use 'lewis6991/gitsigns.nvim' -- OPTIONAL: for git status
+                -- These optional plugins should be loaded directly because of a bug in Packer lazy loading
+                use 'nvim-tree/nvim-web-devicons' -- OPTIONAL: for file icons
+                use 'lewis6991/gitsigns.nvim' -- OPTIONAL: for git status
 
-                    
+                use ({ 
+                    "folke/zen-mode.nvim",
+                })
 
-                    use({ "iamcco/markdown-preview.nvim", run = "cd app && npm install", setup = function() vim.g.mkdp_filetypes = { "markdown" } end, ft = { "markdown" }, })
 
-                    -- use { "nvim-tree/nvim-web-devicons" }  -- not strictly required, but recommended
-                    use { 'romgrk/barbar.nvim' }
-                    use { 'brenoprata10/nvim-highlight-colors' }
-                    use { 'junegunn/fzf.vim' }
+                use({ "iamcco/markdown-preview.nvim", run = "cd app && npm install", setup = function() vim.g.mkdp_filetypes = { "markdown" } end, ft = { "markdown" }, })
+
+                -- use { "nvim-tree/nvim-web-devicons" }  -- not strictly required, but recommended
+                use { 'romgrk/barbar.nvim' }
+                use { 'brenoprata10/nvim-highlight-colors' }
+                use { 'junegunn/fzf.vim' }
+                use {
+                    'VonHeikemen/lsp-zero.nvim',
+                    branch = 'v3.x',
+                    requires = {
+                        --- Uncomment these if you want to manage LSP servers from neovim
+                        {'williamboman/mason.nvim'},
+                        {'williamboman/mason-lspconfig.nvim'},
+
+                        -- LSP Support
+                        {'neovim/nvim-lspconfig'},
+                        -- Autocompletion
+                        {'hrsh7th/nvim-cmp'},
+                        {'hrsh7th/cmp-nvim-lsp'},
+                        -- {'L3MON4D3/LuaSnip'},
+
+                    }
+                }
+
+                use({
+                    "L3MON4D3/LuaSnip",
+                    -- follow latest release.
+                    tag = "v2.*", -- Replace <CurrentMajor> by the latest released major (first number of latest release)
+                    -- install jsregexp (optional!:).
+                    run = "make install_jsregexp"
+                })
+
+                -- use {"akinsho/toggleterm.nvim", tag="*", config = function()
+                    --    require("toggleterm").setup()
+                    -- end}
+
                     use {
-                        'VonHeikemen/lsp-zero.nvim',
-                        branch = 'v3.x',
-                        requires = {
-                            --- Uncomment these if you want to manage LSP servers from neovim
-                            {'williamboman/mason.nvim'},
-                            {'williamboman/mason-lspconfig.nvim'},
-
-                            -- LSP Support
-                            {'neovim/nvim-lspconfig'},
-                            -- Autocompletion
-                            {'hrsh7th/nvim-cmp'},
-                            {'hrsh7th/cmp-nvim-lsp'},
-                            -- {'L3MON4D3/LuaSnip'},
-
-                        }
+                        "klen/nvim-test",
+                        config = function()
+                            require('nvim-test').setup()
+                        end
                     }
 
-                    use({
-                        "L3MON4D3/LuaSnip",
-                        -- follow latest release.
-                        tag = "v2.*", -- Replace <CurrentMajor> by the latest released major (first number of latest release)
-                        -- install jsregexp (optional!:).
-                        run = "make install_jsregexp"
-                    })
+                end)
 
-                    -- use {"akinsho/toggleterm.nvim", tag="*", config = function()
-                        --    require("toggleterm").setup()
-                        -- end}
-
-                        use {
-                            "klen/nvim-test",
-                            config = function()
-                                require('nvim-test').setup()
-                            end
-                        }
-
-                    end)

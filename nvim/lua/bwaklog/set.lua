@@ -12,7 +12,7 @@ vim.opt.expandtab = true
 vim.opt.smartindent = true
 
 vim.opt.wrap = false
-vim.opt.linebreak = false
+vim.opt.linebreak = true
 
 vim.opt.swapfile = false
 vim.opt.backup = false
@@ -25,6 +25,9 @@ vim.opt.signcolumn = "yes"
 vim.opt.isfname:append("@-@")
 
 vim.opt.updatetime = 50
+vim.opt.listchars="eol:⬎,tab:>·,trail:~,extends:>,precedes:<,space:."
+vim.opt.list = true
+
 
 -- vim.opt.colorcolumn = "80"
 vim.cmdheight=1
