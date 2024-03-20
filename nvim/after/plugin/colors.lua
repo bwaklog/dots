@@ -9,6 +9,9 @@ require("catppuccin").setup({
     },
 })
 
+vim.cmd('colorscheme catppuccin')
+
+
 function ColorMyPencil(color)
     color = color or "catppuccin"
     vim.cmd.colorscheme(color)
@@ -22,4 +25,4 @@ function ColorMyPencil(color)
     -- make warnings in gutter have transparent backgroungrand
 end
 
-ColorMyPencil()
+-- ColorMyPencil()
