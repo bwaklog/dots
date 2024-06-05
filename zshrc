@@ -1,3 +1,5 @@
+# Amazon Q pre block. Keep at the top of this file.
+[[ -f "${HOME}/Library/Application Support/amazon-q/shell/zshrc.pre.zsh" ]] && builtin source "${HOME}/Library/Application Support/amazon-q/shell/zshrc.pre.zsh"
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
@@ -8,7 +10,8 @@ export ZSH="$HOME/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-# ZSH_THEME="robbyrussell"
+#ZSH_THEME="robbyrussell"
+#ZSH_THEME="elessar"
 
 autoload -Uz add-zsh-hook vcs_info
 setopt prompt_subst
@@ -32,7 +35,11 @@ RPROMPT='⎇ ${vcs_info_msg_0_}'
 NEWLINE=$'\n'
 # PROMPT="[%F{220}%n%f%F{118}@%f%F{148}%m%f %(?.%F{14}%1~.%F{9}%1~)%f]%f${NEWLINE}λ "
 # PROMPT="[%F{220}%m%f@ %(?.%F{14}%1~.%F{9}%1~)%f]%f${NEWLINE}λ "
-PROMPT="[%F{green}%m%f@ %(?.%F{14}%1~.%F{9}%1~)%f]%f${NEWLINE}λ "
+#PROMPT="[%F{green}%m%f|%(?.%F{14}%1~.%F{9}%1~)%f]%f${NEWLINE}λ "
+#PROMPT="[%n@%(?.%F{14}%1~.%F{9}%1~)%f]%f${NEWLINE}λ "
+
+# Retain the default prompt ad add new line
+PROMPT="%n@%1~${NEWLINE}λ "
 
 
 # Set list of themes to pick from when loading at random
@@ -95,7 +102,7 @@ PROMPT="[%F{green}%m%f@ %(?.%F{14}%1~.%F{9}%1~)%f]%f${NEWLINE}λ "
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git zsh-syntax-highlighting zsh-autosuggestions)
+plugins=(git zsh-syntax-highlighting zsh-autosuggestions fzf-tab)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -186,6 +193,7 @@ alias la="ls -la"
 alias glog="git log --oneline --graph --all"
 alias gfp="git add .; git commit --amend --no-edit; git push origin main --force"
 alias cat="bat"
+alias fastfetch='fastfetch --logo none'
 
 # function to use make and build file and use leaks 
 
@@ -194,7 +202,7 @@ export PATH="~/.config/emacs/bin:$PATH"
 export PATH="$PATH:/Applications/WezTerm.app/Contents/MacOS"
 
 # export MANPATH="/usr/local/man:$MANPATH"
-source "/Users/adityahegde/emsdk/emsdk_env.sh"
+# source "/Users/adityahegde/emsdk/emsdk_env.sh"
 #EMSDK_QUIET=1
 
 # >>> juliaup initialize >>>
@@ -218,9 +226,15 @@ export PATH
 
 
 # Fig post block. Keep at the bottom of this file.
-# [[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.post.zsh"
+# eval $(thefuck --alias)
 
-eval $(thefuck --alias)
-
-#PATH=~/.console-ninja/.bin:$PATH
+#
 export GPG_TTY=$(tty)
+export GOPATH=$HOME/go
+export PATH=$PATH:$GOPATH/bin
+
+
+[[ -f "$HOME/fig-export/dotfiles/dotfile.zsh" ]] && builtin source "$HOME/fig-export/dotfiles/dotfile.zsh"
+
+# Amazon Q post block. Keep at the bottom of this file.
+[[ -f "${HOME}/Library/Application Support/amazon-q/shell/zshrc.post.zsh" ]] && builtin source "${HOME}/Library/Application Support/amazon-q/shell/zshrc.post.zsh"
