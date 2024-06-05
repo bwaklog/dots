@@ -1,0 +1,78 @@
+// Zed settings
+//
+// For information on how to configure Zed, see the Zed
+// documentation: https://zed.dev/docs/configuring-zed
+//
+// To see all of Zed's default settings without changing your
+// custom settings, run the `open default settings` command
+// from the command palette or from `Zed` application menu.
+{
+  "show_inline_completions": false,
+  "theme": "Ayu Dark",
+  "show_copilot_suggestions": true,
+  "vim_mode": true,
+  // "theme": "Xcode Presentation Dark",
+  "ui_font_size": 16,
+  "buffer_font_size": 16,
+  "buffer_font_family": "ZedMono Nerd Font",
+  // "buffer_font_family": "SFMono Nerd Font",
+  "relative_line_numbers": true,
+  "buffer_line_height": "standard",
+  "format_on_save": "off",
+  "tab_size": 4,
+  "autosave": "off",
+
+  "inlay_hints": {
+    "enabled": true,
+    "show_type_hints": true,
+    "show_parameter_hints": true,
+    "show_other_hints": true,
+    "edit_debounce_ms": 700,
+    "scroll_debounce_ms": 50
+  },
+
+  "show_whitespaces": "all",
+  "language_overrides": {
+    "Rust": {
+      "show_inline_completions": false,
+      "show_copilot_suggestions": false
+    },
+    "C": {
+      "show_copilot_suggestions": true,
+      "tab_size": 4
+    },
+    "Markdown": {
+      "show_copilot_suggestions": true
+    },
+    "JSON": {
+      "show_copilot_suggestions": true
+    },
+    "Go": {
+      "show_copilot_suggestions": true
+    },
+    "Make": {
+      "hard_tabs": true,
+      "tab_size": 4
+    }
+  },
+
+  "tab_bar": {
+    "show": false
+  },
+
+  "lsp": {
+    "gopls": {
+      "initialization_options": {
+        "hints": {
+          "assignVariableTypes": true,
+          "compositeLiteralFields": true,
+          "compositeLiteralTypes": true,
+          "constantValues": true,
+          "functionTypeParameters": true,
+          "parameterNames": true,
+          "rangeVariableTypes": true
+        }
+      }
+    }
+  }
+}
