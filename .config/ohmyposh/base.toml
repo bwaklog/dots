@@ -1,0 +1,61 @@
+#:schema https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json
+
+version = 2
+final_space = true
+console_title_template = '{{ .Shell }} in {{ .Folder }}'
+
+[[blocks]]
+type = 'prompt'
+alignment = 'left'
+newline = true
+
+[[blocks.segments]]
+type = 'path'
+style = 'plain'
+background = 'transparent'
+# foreground = 'blue'
+template = '<b>{{.HostName}} @ {{ .Path }}</b>'
+
+
+[blocks.segments.properties]
+# style = 'unique'
+style = 'unique'
+
+[[blocks.segments]]
+type = 'git'
+style = 'plain'
+background = 'transparent'
+template = ' {{ .HEAD }} {{ printf "%.7s" .Commit.Sha }}'
+
+# [transient_prompt]
+# foreground = "magenta"
+# background = "transparent"
+# template = "{{ .Shell }} >"
+
+[[blocks]]
+type = 'prompt'
+alignment = 'right'
+
+[[blocks.segments]]
+type = 'time'
+style = 'plain'
+
+[properties]
+discharging_icon = " "
+charging_icon = " "
+charged_icon = " "
+
+[[blocks]]
+type = 'prompt'
+alignment = 'left'
+newline = true
+
+[[blocks.segments]]
+style = 'plain'
+type = 'text'
+background = 'transparent'
+foreground_templates = [
+  "{{if eq .Code 1}}red{{end}}",
+  "{{if eq .Code 0}}magenta{{else}}red{{end}}",
+]
+template = '<b>λ</b>'

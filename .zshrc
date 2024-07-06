@@ -13,33 +13,39 @@ export ZSH="$HOME/.oh-my-zsh"
 #ZSH_THEME="robbyrussell"
 #ZSH_THEME="elessar"
 
-autoload -Uz add-zsh-hook vcs_info
-setopt prompt_subst
-add-zsh-hook precmd vcs_info
 
-# vcs info style
-zstyle ':vcs_info:*' enable git
-zstyle ':vcs_info:git*' formats '%b%u%c'
-# when repo in action (merge, rebase, etc)
-zstyle ':vcs_info:git*' actionformats '%F{14}⏱ %*%f'
-zstyle ':vcs_info:git*' unstagedstr '*'
-zstyle ':vcs_info:git*' stagedstr '+'
-# This enables %u and %c (unstaged/staged changes) to work,
-# but can be slow on large repos
-zstyle ':vcs_info:*:*' check-for-changes true
+# oh my posh config 
+if [ "$TERM_PROGRAM" != "Apple_Terminal" ]; then
+  eval "$(oh-my-posh init zsh --config ~/.config/ohmyposh/base.toml)"
+fi
 
-# Set the right prompt to the vcs_info message
-RPROMPT='⎇ ${vcs_info_msg_0_}'
+# autoload -Uz add-zsh-hook vcs_info
+# setopt prompt_subst
+# add-zsh-hook precmd vcs_info
 
-
-NEWLINE=$'\n'
-# PROMPT="[%F{220}%n%f%F{118}@%f%F{148}%m%f %(?.%F{14}%1~.%F{9}%1~)%f]%f${NEWLINE}λ "
-# PROMPT="[%F{220}%m%f@ %(?.%F{14}%1~.%F{9}%1~)%f]%f${NEWLINE}λ "
-#PROMPT="[%F{green}%m%f|%(?.%F{14}%1~.%F{9}%1~)%f]%f${NEWLINE}λ "
-#PROMPT="[%n@%(?.%F{14}%1~.%F{9}%1~)%f]%f${NEWLINE}λ "
-
-# Retain the default prompt ad add new line
-PROMPT="%n@%1~${NEWLINE}λ "
+# # vcs info style
+# zstyle ':vcs_info:*' enable git
+# zstyle ':vcs_info:git*' formats '%b%u%c'
+# # when repo in action (merge, rebase, etc)
+# zstyle ':vcs_info:git*' actionformats '%F{14}⏱ %*%f'
+# zstyle ':vcs_info:git*' unstagedstr '*'
+# zstyle ':vcs_info:git*' stagedstr '+'
+# # This enables %u and %c (unstaged/staged changes) to work,
+# # but can be slow on large repos
+# zstyle ':vcs_info:*:*' check-for-changes true
+#
+# # Set the right prompt to the vcs_info message
+# RPROMPT='⎇ ${vcs_info_msg_0_}'
+#
+#
+# NEWLINE=$'\n'
+# # PROMPT="[%F{220}%n%f%F{118}@%f%F{148}%m%f %(?.%F{14}%1~.%F{9}%1~)%f]%f${NEWLINE}λ "
+# # PROMPT="[%F{220}%m%f@ %(?.%F{14}%1~.%F{9}%1~)%f]%f${NEWLINE}λ "
+# #PROMPT="[%F{green}%m%f|%(?.%F{14}%1~.%F{9}%1~)%f]%f${NEWLINE}λ "
+# #PROMPT="[%n@%(?.%F{14}%1~.%F{9}%1~)%f]%f${NEWLINE}λ "
+#
+# # Retain the default prompt ad add new line
+# PROMPT="%n@%1~${NEWLINE}λ "
 
 
 # Set list of themes to pick from when loading at random
@@ -191,6 +197,7 @@ alias gp="git push"
 alias gd="git diff"
 alias la="ls -la"
 alias glog="git log --oneline --graph --all"
+alias gcan="git commit --amend --no-edit"
 alias gfp="git add .; git commit --amend --no-edit; git push origin main --force"
 alias cat="bat"
 alias fastfetch='fastfetch --logo none'
@@ -232,7 +239,7 @@ export PATH
 export GPG_TTY=$(tty)
 export GOPATH=$HOME/go
 export PATH=$PATH:$GOPATH/bin
-
+export PATH="$HOME/.emacs.d/bin:$PATH"
 
 [[ -f "$HOME/fig-export/dotfiles/dotfile.zsh" ]] && builtin source "$HOME/fig-export/dotfiles/dotfile.zsh"
 
