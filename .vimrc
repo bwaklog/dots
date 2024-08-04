@@ -4,54 +4,54 @@
 " set nocompatible
 
 set relativenumber number
-syntax on
-set ignorecase
+" syntax on
+" set ignorecase
+" 
+" call plug#begin()
+" 
+" " Language Related
+" " Plug 'fatih/vim-go'
+" 
+" " Plug 'airblade/vim-gitgutter'
+" 
+" " colorscheme
+" Plug 'morhetz/gruvbox'
+" 
+" " List your plugins here
+" Plug 'tpope/vim-sensible'
+" Plug 'tommason14/lammps.vim'
+" 
+" Plug 'prabirshrestha/vim-lsp'
+" Plug 'mattn/vim-lsp-settings'
+" 
+" " Quality of Life plugins
+" Plug 'junegunn/fzf.vim'
+" 
+" " Interfaces
+" Plug 'vim-airline/vim-airline'
+" 
+" Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+" Plug 'junegunn/fzf.vim'
+" 
+" call plug#end()
+" 
+" " shortcut
+" " Set leader key to space
+" let mapleader = " "
 
-call plug#begin()
-
-" Language Related
-" Plug 'fatih/vim-go'
-
-" Plug 'airblade/vim-gitgutter'
-
-" colorscheme
-Plug 'morhetz/gruvbox'
-
-" List your plugins here
-Plug 'tpope/vim-sensible'
-Plug 'tommason14/lammps.vim'
-
-Plug 'prabirshrestha/vim-lsp'
-Plug 'mattn/vim-lsp-settings'
-
-" Quality of Life plugins
-Plug 'junegunn/fzf.vim'
-
-" Interfaces
-Plug 'vim-airline/vim-airline'
-
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'junegunn/fzf.vim'
-
-call plug#end()
-
-" shortcut
-" Set leader key to space
-let mapleader = " "
-
-nnoremap <leader>f :Files<CR>
-nnoremap <leader>b :Buffers<CR>
-nnoremap <leader>g :GFiles<CR>
-nnoremap <leader>r :History<CR>
-nnoremap <leader>/ :BLines<CR>
-nnoremap <leader>s :Rg<CR>
+" nnoremap <leader>f :Files<CR>
+" nnoremap <leader>b :Buffers<CR>
+" nnoremap <leader>g :GFiles<CR>
+" nnoremap <leader>r :History<CR>
+" nnoremap <leader>/ :BLines<CR>
+" nnoremap <leader>s :Rg<CR>
 
 " disable arrow keys
-nnoremap <Left>  :echo "🦔 Use h"<CR>
-nnoremap <Right> :echo "🦔 Use l"<CR>
-nnoremap <Up>    :echo "🦔 Use k"<CR>
-nnoremap <Down>  :echo "🦔 Use j"<CR>
-inoremap <Left>  <ESC>:echo "🦔 Use h"<CR>
-inoremap <Right> <ESC>:echo "🦔 Use l"<CR>
-inoremap <Up>    <ESC>:echo "🦔 Use k"<CR>
-inoremap <Down>  <ESC>:echo "🦔 Use j"<CR>
+" nnoremap <Left>  :echo "🦔 Use h"<CR>
+" nnoremap <Right> :echo "🦔 Use l"<CR>
+" nnoremap <Up>    :echo "🦔 Use k"<CR>
+" nnoremap <Down>  :echo "🦔 Use j"<CR>
+" inoremap <Left>  <ESC>:echo "🦔 Use h"<CR>
+" inoremap <Right> <ESC>:echo "🦔 Use l"<CR>
+" inoremap <Up>    <ESC>:echo "🦔 Use k"<CR>
+" inoremap <Down>  <ESC>:echo "🦔 Use j"<CR>
