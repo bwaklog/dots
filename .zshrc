@@ -10,8 +10,8 @@ export ZSH="$HOME/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-# ZSH_THEME="robbyrussell"
-ZSH_THEME="sammy"
+# ZSH_THEME="sammy"
+ZSH_THEME="robbyrussell"
 
 # oh my posh config 
 # if [ "$TERM_PROGRAM" != "Apple_Terminal" ]; then
@@ -240,8 +240,14 @@ export GOPATH=$HOME/go
 export PATH=$PATH:$GOPATH/bin
 export PATH="$HOME/.emacs.d/bin:$PATH"
 
+# Verilog stuff
+export LDFLAGS="-L/opt/homebrew/opt/libffi/lib"
+export CPPFLAGS="-I/opt/homebrew/opt/libffi/include"
+export PKG_CONFIG_PATH="/opt/homebrew/lib/pkgconfig:/opt/homebrew/opt/libffi/lib/pkgconfig:/opt/homebrew/opt/zlib/lib/pkgconfig:/opt/homebrew/opt/gtk+3/lib/pkgconfig:/opt/homebrew/opt/expat/lib/pkgconfig"
+
 EDITOR=nvim
 VISUAL=nvim
+GIT_EDITOR=nvim
 
 NNN_PLUG='l:-!git log;o:-!&zed "$nnn";v:-!nvim "$nnn"'
 export NNN_PLUG
@@ -249,3 +255,8 @@ export NNN_PLUG
 source <(fzf --zsh)
 
 [[ -f "$HOME/fig-export/dotfiles/dotfile.zsh" ]] && builtin source "$HOME/fig-export/dotfiles/dotfile.zsh"
+alias tsc="tailscale"
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
