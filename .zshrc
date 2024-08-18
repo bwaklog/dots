@@ -188,6 +188,7 @@ source /opt/homebrew/opt/chruby/share/chruby/auto.sh
 # bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
+export PATH="/Library/TeX/texbin:$PATH"
 
 # some quick aliases
 alias gs="git status"
