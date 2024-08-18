@@ -1,4 +1,4 @@
-BasedOnStyle: Mozilla
+BasedOnStyle: GNU
 AccessModifierOffset: '-4'
 AlignAfterOpenBracket: Align
 AlignConsecutiveAssignments: 'true'

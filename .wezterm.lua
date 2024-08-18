@@ -8,7 +8,7 @@ local config = wezterm.config_builder()
 
 -- For example, changing the color scheme:
 -- config.color_scheme = "tlh (terminal.sexy)"
-config.color_scheme = "thwump (terminal.sexy)"
+-- config.color_scheme = "thwump (terminal.sexy)"
 -- config.color_scheme = "Nord (Gogh)"
 -- config.color_scheme = "Sequoia Moonlight"
 -- config.color_scheme = "catppuccin-mocha"
@@ -24,13 +24,12 @@ config.color_scheme = "tokyonight"
 -- config.color_scheme = "Solarized Dark Higher Contrast (Gogh)"
 
 -- config.font = wezterm.font("Iosevka Custom")
--- config.font = wezterm.font_with_fallback({ "SFMono" })
-config.font = wezterm.font_with_fallback({ "agave Nerd Font Mono" }, { weight = "Medium" })
 config.font = wezterm.font_with_fallback({ "Go Mono for Powerline" })
-config.font = wezterm.font_with_fallback({ "IBM Plex Mono", "CaskaydiaCove Nerd Font" })
+config.font = wezterm.font_with_fallback({ "CaskaydiaCove Nerd Font" })
 config.font = wezterm.font_with_fallback({ "ZedMono Nerd Font" }, { weight = "Medium" })
+config.font = wezterm.font_with_fallback({ "agave Nerd Font Mono" }, { weight = "Medium" })
 
-config.font_size = 16.0
+config.font_size = 19.0
 
 -- background transparent
 config.window_background_opacity = 0.9

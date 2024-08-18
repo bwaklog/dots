@@ -1,0 +1,38 @@
+# import = ["~/alacritty-theme/themes/dracula.toml"]
+import = ["~/alacritty-theme/themes/catppuccin_mocha.toml"]
+
+live_config_reload = true
+
+[window]
+# window configuration
+padding.x = 10
+padding.y = 15
+dynamic_padding = true
+
+decorations = "buttonless"
+
+opacity = 0.90
+blur = true
+
+[font]
+
+normal.family = "agave NFM"
+bold.family = "agave NFM"
+italic.family = "agave NFM"
+bold_italic.family = "agave NFM"
+
+size = 16.0
+
+[cursor]
+
+style.blinking = "Always"
+
+[debug]
+
+# render_timer = true
+
+[keyboard]
+bindings = [
+  { key = "Space", mods = "Option|Control", action = "ToggleViMode" },
+  { key = "Enter", mods = "Option", action = "ToggleSimpleFullscreen" },
+]
