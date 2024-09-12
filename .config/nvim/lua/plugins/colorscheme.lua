@@ -9,15 +9,13 @@ return {
       transparent_background = true,
     },
   },
-  {
-    "ellisonleao/gruvbox.nvim",
-    priority = 1000,
-    config = true,
-    opts = {
-      transparent_mode = true,
-    },
-  },
-
+  -- {
+  --   "morhetz/gruvbox",
+  --   opts = {
+  --     gruvbox_material_background = "hard",
+  --   },
+  -- },
+  --
   {
     "rose-pine/neovim",
     name = "rose-pine",
@@ -30,14 +28,15 @@ return {
       },
     },
   },
+
   {
-    "slugbyte/lackluster.nvim",
+    "sainnhe/gruvbox-material",
     lazy = false,
     priority = 1000,
-    init = function()
-      vim.cmd.colorscheme("lackluster")
-      -- vim.cmd.colorscheme("lackluster-hack") -- my favorite
-      -- vim.cmd.colorscheme("lackluster-mint")
+    config = function()
+      vim.g.gruvbox_material_background = "material"
+      vim.g.gruvbox_material_enable_italic = true
+      vim.g.gruvbox_material_transparent_background = 1
     end,
   },
 
@@ -52,19 +51,11 @@ return {
     },
   },
 
-  {
-    "olimorris/onedarkpro.nvim",
-  },
-
-  {
-    "kdheepak/monochrome.nvim",
-  },
-
   -- Configure LazyVim to load gruvbox
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "tokyonight",
+      colorscheme = "gruvbox-material",
     },
   },
 }

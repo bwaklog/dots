@@ -1,5 +1,8 @@
 # import = ["~/alacritty-theme/themes/dracula.toml"]
-import = ["~/alacritty-theme/themes/catppuccin_mocha.toml"]
+# import = ["~/alacritty-theme/themes/dark"]
+# import = ["~/alacritty-theme/themes/gruvbox_dark.toml"]
+# import = ["~/alacritty-theme/themes/catppuccin_mocha.toml"]
+import = ["~/alacritty-theme/themes/gruvbox_material_hard_dark.toml"]
 
 live_config_reload = true
 
@@ -11,17 +14,19 @@ dynamic_padding = true
 
 decorations = "buttonless"
 
-opacity = 0.90
+opacity = 0.95
 blur = true
 
 [font]
 
-normal.family = "agave NFM"
-bold.family = "agave NFM"
-italic.family = "agave NFM"
-bold_italic.family = "agave NFM"
+# normal = { family = "Iosevka PragmataPro" }
 
-size = 16.0
+normal.family = "ZedMono Nerd Font"
+bold.family = "ZedMono Nerd Font"
+italic.family = "ZedMono Nerd Font"
+bold_italic.family = "ZedMono Nerd Font"
+
+size = 18.0
 
 [cursor]
 

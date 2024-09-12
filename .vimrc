@@ -12,14 +12,15 @@ call plug#begin()
 " Language Related
 Plug 'fatih/vim-go'
 
-Plug 'airblade/vim-gitgutter'
+set termguicolors
+
+" Plug 'airblade/vim-gitgutter'
 
 " colorscheme
 Plug 'morhetz/gruvbox'
 
 " List your plugins here
 Plug 'tpope/vim-sensible'
-Plug 'tommason14/lammps.vim'
 
 Plug 'prabirshrestha/vim-lsp'
 Plug 'mattn/vim-lsp-settings'
@@ -28,10 +29,14 @@ Plug 'mattn/vim-lsp-settings'
 Plug 'junegunn/fzf.vim'
 
 " Interfaces
+" Plug 'catppuccin/vim', { 'as': 'catppuccin' }
 Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+let g:airline_theme='transparent'
 
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
+
 
 call plug#end()
 " 
@@ -39,3 +44,29 @@ call plug#end()
 " " Set leader key to space
 " let mapleader = " "
 
+set list
+set showbreak=↪
+set listchars=tab:→\ ,eol:↲,nbsp:␣,trail:•,extends:⟩,precedes:⟨
+set background=dark
+colorscheme gruvbox
+
+let s:hidden_all = 0
+function! ToggleHiddenAll()
+    if s:hidden_all  == 0
+        let s:hidden_all = 1
+        set noshowmode
+        set noruler
+        set laststatus=0
+        set noshowcmd
+	set nonumber norelativenumber
+    else
+        let s:hidden_all = 0
+        set showmode
+        set ruler
+        set laststatus=2
+        set showcmd
+	set number relativenumber
+    endif
+endfunction
+
+nnoremap <S-h> :call ToggleHiddenAll()<CR>

@@ -7,33 +7,24 @@ local config = wezterm.config_builder()
 -- This is where you actually apply your config choices
 
 -- For example, changing the color scheme:
--- config.color_scheme = "tlh (terminal.sexy)"
--- config.color_scheme = "thwump (terminal.sexy)"
--- config.color_scheme = "Nord (Gogh)"
--- config.color_scheme = "Sequoia Moonlight"
--- config.color_scheme = "catppuccin-mocha"
--- config.color_scheme = "Rosé Pine (Gogh)"
--- config.color_scheme = "OneDark (base16)"
--- config.color_scheme = "Tokyo Night Storm"
--- config.color_scheme = "Tomorrow Night Bright"
+-- config.color_scheme = "Catppuccin Mocha"
 -- config.color_scheme = "Gruvbox dark, hard (base16)"
--- config.color_scheme = "Gruvbox Dark (Gogh)"
--- config.color_scheme = "duckbones"
-config.color_scheme = "tokyonight"
--- config.color_scheme = "Solarized Dark - Patched"
--- config.color_scheme = "Solarized Dark Higher Contrast (Gogh)"
+config.color_scheme = "Gruvbox Material (Gogh)"
+config.color_scheme = "GruvboxDarkHard"
 
 -- config.font = wezterm.font("Iosevka Custom")
-config.font = wezterm.font_with_fallback({ "Go Mono for Powerline" })
-config.font = wezterm.font_with_fallback({ "CaskaydiaCove Nerd Font" })
+-- config.font = wezterm.font_with_fallback({ "Go Mono for Powerline" })
+-- config.font = wezterm.font_with_fallback({ "CaskaydiaCove Nerd Font" })
+-- config.font = wezterm.font_with_fallback({ "Victor Mono" }, { weight = "Medium" })
+-- config.font = wezterm.font_with_fallback({ "agave Nerd Font Mono" }, { weight = "Medium" })
+-- config.font = wezterm.font_with_fallback({ "ZedMono Nerd Font" }, { weight = "Medium" })
 config.font = wezterm.font_with_fallback({ "ZedMono Nerd Font" }, { weight = "Medium" })
-config.font = wezterm.font_with_fallback({ "agave Nerd Font Mono" }, { weight = "Medium" })
 
-config.font_size = 19.0
+config.font_size = 16.0
 
 -- background transparent
-config.window_background_opacity = 0.9
-config.macos_window_background_blur = 50
+-- config.window_background_opacity = 1
+-- config.macos_window_background_blur = 50
 --
 -- config.window_padding = {
 -- 	left = 40,
@@ -48,18 +39,6 @@ config.window_padding = {
 	top = 20,
 	bottom = 10,
 }
-
---
--- config.window_frame = {
--- 	border_left_width = "0.5cell",
--- 	border_right_width = "0.5cell",
--- 	border_bottom_height = "0.25cell",
--- 	border_top_height = "0.25cell",
--- 	border_left_color = "white",
--- 	border_right_color = "white",
--- 	border_bottom_color = "white",
--- 	border_top_color = "white",
--- }
 
 -- win splitting config
 config.keys = {
@@ -88,10 +67,10 @@ config.initial_rows = 35
 
 config.use_fancy_tab_bar = false
 -- config.hide_tab_bar_if_only_one_tab = true
-config.tab_bar_at_bottom = false
+config.tab_bar_at_bottom = true
 config.enable_tab_bar = true
 
--- wezterm.on("update-right-status", function(window, pane)
+-- wezterm.on("update-right-status", function(window)
 -- 	local date = wezterm.strftime_utc("%b %d")
 -- 	wezterm.log_info(date)
 -- 	local time = wezterm.strftime("%H:%M")
@@ -107,7 +86,7 @@ config.enable_tab_bar = true
 -- 	window:set_right_status(wezterm.format({
 -- 		-- { Attribute = { Underline = "Single" } },
 -- 		{ Attribute = { Italic = false } },
--- 		{ Text = date .. " " .. time .. " | " .. hostname .. " | bat " .. bat },
+-- 		{ Text = date .. " " .. time .. " | " .. hostname .. " | bat " .. bat .. "  " },
 -- 	}))
 -- end)
 
