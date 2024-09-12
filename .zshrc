@@ -11,7 +11,8 @@ export ZSH="$HOME/.oh-my-zsh"
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 # ZSH_THEME="sammy"
-ZSH_THEME="robbyrussell"
+#ZSH_THEME="robbyrussell"
+eval "$(oh-my-posh init zsh --config ~/dots/.config/ohmyposh/base.toml)"
 
 # oh my posh config 
 # if [ "$TERM_PROGRAM" != "Apple_Terminal" ]; then
@@ -179,6 +180,22 @@ function valgrind() {
     eval "$cmd"
 } 
 
+function cbr() {
+  cargo b --release
+  if [ $? -eq 0 ]; then
+    # Find the compiled binary name
+    binary_name=$(basename $(find target/release -maxdepth 1 -type f -perm +111 -print))
+
+    # Copy the binary to the parent directory
+    cp "target/release/$binary_name" "../$binary_name"
+
+    echo "Binary '$binary_name' copied to the parent directory."
+
+  else
+    echo "Cargo build failed."
+  fi
+}
+
 source /opt/homebrew/opt/chruby/share/chruby/chruby.sh
 source /opt/homebrew/opt/chruby/share/chruby/auto.sh
 
@@ -250,10 +267,15 @@ EDITOR=nvim
 VISUAL=nvim
 GIT_EDITOR=nvim
 
+alias v='nvim'
+
 NNN_PLUG='l:-!git log;o:-!&zed "$nnn";v:-!nvim "$nnn"'
 export NNN_PLUG
 
 source <(fzf --zsh)
+
+[[ $TERM == "xterm-kitty" ]] && alias ssh="TERM=xterm-256color ssh"
+[[ $TERM == "xterm-kitty" ]] && alias limactl="TERM=xterm-256color limactl"
 
 [[ -f "$HOME/fig-export/dotfiles/dotfile.zsh" ]] && builtin source "$HOME/fig-export/dotfiles/dotfile.zsh"
 alias tsc="tailscale"
