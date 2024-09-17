@@ -37,6 +37,7 @@ return {
       vim.g.gruvbox_material_background = "material"
       vim.g.gruvbox_material_enable_italic = true
       vim.g.gruvbox_material_transparent_background = 1
+      vim.o.background = "dark"
     end,
   },
 
@@ -56,6 +57,7 @@ return {
     "LazyVim/LazyVim",
     opts = {
       colorscheme = "gruvbox-material",
+      -- colorscheme = "rose-pine",
     },
   },
 }

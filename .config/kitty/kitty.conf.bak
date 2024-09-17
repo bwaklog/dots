@@ -268,6 +268,7 @@ map ctrl+c send_text all \x03
 #: then this option is ignored.
 
 # cursor_shape block
+# cursor_shape underline
 
 #: The cursor shape can be one of block, beam, underline. Note that
 #: when reloading the config this will be changed only if the cursor
@@ -496,6 +497,15 @@ map ctrl+c send_text all \x03
 background_opacity 0.9
 background_blur 50
 
+# Tab Bar configuration
+# active_tab_foreground   #000
+# active_tab_background   #d0a863
+active_tab_font_style   bold-italic
+# inactive_tab_foreground #81A1C1
+# inactive_tab_background #2E3440
+inactive_tab_font_style normal
+
+tab_bar_align center
 
 #: The color of the kitty window's titlebar on Wayland systems with
 #: client side window decorations such as GNOME. A value of system
@@ -1392,6 +1402,6 @@ map ctrl+t new_tab_with_cwd
 
 
 # BEGIN_KITTY_THEME
-# Default
+# Rosé Pine Dawn
 include current-theme.conf
 # END_KITTY_THEME
