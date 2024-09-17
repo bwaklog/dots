@@ -250,7 +250,7 @@ export PATH
 
 
 # Fig post block. Keep at the bottom of this file.
-eval $(thefuck --alias)
+# eval $(thefuck --alias)
 
 #
 export GPG_TTY=$(tty)
@@ -262,15 +262,12 @@ export PATH="$HOME/.emacs.d/bin:$PATH"
 export LDFLAGS="-L/opt/homebrew/opt/libffi/lib"
 export CPPFLAGS="-I/opt/homebrew/opt/libffi/include"
 export PKG_CONFIG_PATH="/opt/homebrew/lib/pkgconfig:/opt/homebrew/opt/libffi/lib/pkgconfig:/opt/homebrew/opt/zlib/lib/pkgconfig:/opt/homebrew/opt/gtk+3/lib/pkgconfig:/opt/homebrew/opt/expat/lib/pkgconfig"
-source ~/.env
 
 EDITOR=nvim
 VISUAL=nvim
 GIT_EDITOR=nvim
-PROMPT_EOL_MARK=''
 
 alias v='nvim'
-# alias mkb='fuck'
 
 NNN_PLUG='l:-!git log;o:-!&zed "$nnn";v:-!nvim "$nnn"'
 export NNN_PLUG
@@ -286,9 +283,3 @@ alias tsc="tailscale"
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
-fortune
-[[ $TERM == "xterm-kitty" ]] && kitten icat --align left ~/go.png 
-[[ $TERM == "tmux-256color" ]] && kitten icat --align left ~/go.png 
-[[ $TERM == "xterm-256color" ]] && wezterm imgcat ~/go.png
-# neofetch
