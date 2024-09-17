@@ -1,6 +1,4 @@
--- require('tapank')
-require('tapank.packer')
-require('tapank.set')
-require('tapank.remap')
-require('after')
-print("ola :D")
+-- bootstrap lazy.nvim, LazyVim and your plugins
+require("config.lazy")
+
+require("nvim-treesitter.install").compilers = { "zig" }
