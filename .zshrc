@@ -216,8 +216,8 @@ alias la="ls -la"
 alias glog="git log --oneline --graph --all"
 alias gcan="git commit --amend --no-edit"
 alias gfp="git add .; git commit --amend --no-edit; git push origin main --force"
-alias cat="bat"
 alias fastfetch='fastfetch --logo none'
+alias cat='bat'
 
 # function to use make and build file and use leaks 
 
@@ -258,6 +258,21 @@ export GOPATH=$HOME/go
 export PATH=$PATH:$GOPATH/bin
 export PATH="$HOME/.emacs.d/bin:$PATH"
 
+# Brew completions
+if type brew &>/dev/null
+then
+  HOMEBREW_PREFIX="$(brew --prefix)"
+  if [[ -r "${HOMEBREW_PREFIX}/etc/profile.d/bash_completion.sh" ]]
+  then
+    source "${HOMEBREW_PREFIX}/etc/profile.d/bash_completion.sh"
+  else
+    for COMPLETION in "${HOMEBREW_PREFIX}/etc/bash_completion.d/"*
+    do
+      [[ -r "${COMPLETION}" ]] && source "${COMPLETION}"
+    done
+  fi
+fi
+
 # Verilog stuff
 export LDFLAGS="-L/opt/homebrew/opt/libffi/lib"
 export CPPFLAGS="-I/opt/homebrew/opt/libffi/include"
@@ -268,6 +283,9 @@ VISUAL=nvim
 GIT_EDITOR=nvim
 
 alias v='nvim'
+alias python='python3'
+alias gitdiff='git difftool --tool=nvimdiff'
+alias emacs='emacs --no-window-system'
 
 NNN_PLUG='l:-!git log;o:-!&zed "$nnn";v:-!nvim "$nnn"'
 export NNN_PLUG
@@ -276,6 +294,7 @@ source <(fzf --zsh)
 
 [[ $TERM == "xterm-kitty" ]] && alias ssh="TERM=xterm-256color ssh"
 [[ $TERM == "xterm-kitty" ]] && alias limactl="TERM=xterm-256color limactl"
+[[ $TERM == "xterm-kitty" ]] && alias ssh="kitten ssh"
 
 [[ -f "$HOME/fig-export/dotfiles/dotfile.zsh" ]] && builtin source "$HOME/fig-export/dotfiles/dotfile.zsh"
 alias tsc="tailscale"
@@ -283,3 +302,17 @@ alias tsc="tailscale"
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# echo "
+# TODO:
+# [ ] Setup espanso
+# [ ] Cook
+# "
+
+unsetopt beep
+# Just so that i read it each time
+# fortune | lolcat
+fortune
+
+# Yeah we dont talk about this
+# [[ $TERM == "xterm-kitty" ]] && kitten icat --align left go.png

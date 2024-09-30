@@ -493,8 +493,8 @@ map ctrl+c send_text all \x03
 
 # wayland_titlebar_color system
 
-background_opacity 0.9
-background_blur 50
+# background_opacity 0.95
+# background_blur 25
 
 
 #: The color of the kitty window's titlebar on Wayland systems with
@@ -511,7 +511,8 @@ hide_window_decorations titlebar-only
 #: system means to use the default system color, light or dark can
 #: also be used to set it explicitly. A value of background means to
 #: use the background color of the currently active window and finally
-#: you can use an arbitrary color, such as #12af59 or red. WARNING:
+#: you can use an arbitrary color, such as #12af59 or red. 
+#: WARNING:
 #: This option works by using a hack when arbitrary color (or
 #: background) is configured, as there is no proper Cocoa API for it.
 #: It sets the background color of the entire window and makes the
@@ -1392,6 +1393,6 @@ map ctrl+t new_tab_with_cwd
 
 
 # BEGIN_KITTY_THEME
-# Default
+# Gruvbox Material Dark Hard
 include current-theme.conf
 # END_KITTY_THEME

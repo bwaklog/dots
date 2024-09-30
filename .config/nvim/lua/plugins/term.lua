@@ -13,7 +13,7 @@ return {
     },
     keys = {
       {
-        "<leader>f/",
+        "<M-/>",
         function()
           vim.cmd("ToggleTerm direction=float")
         end,

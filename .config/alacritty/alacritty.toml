@@ -1,30 +1,35 @@
-# import = ["~/alacritty-theme/themes/dracula.toml"]
-# import = ["~/alacritty-theme/themes/dark"]
-# import = ["~/alacritty-theme/themes/gruvbox_dark.toml"]
-# import = ["~/alacritty-theme/themes/catppuccin_mocha.toml"]
-import = ["~/alacritty-theme/themes/gruvbox_material_hard_dark.toml"]
+# import = ["~/alacritty-theme/themes/ayu_dark.toml"]
+# import = ["~/alacritty-theme/themes/base16_default_dark.toml"]
 
 live_config_reload = true
 
 [window]
 # window configuration
-padding.x = 10
-padding.y = 15
+padding.x = 8
+padding.y = 10
 dynamic_padding = true
 
 decorations = "buttonless"
 
-opacity = 0.95
-blur = true
+# opacity = 1
+# blur = true
 
 [font]
 
-# normal = { family = "Iosevka PragmataPro" }
 
-normal.family = "ZedMono Nerd Font"
-bold.family = "ZedMono Nerd Font"
-italic.family = "ZedMono Nerd Font"
-bold_italic.family = "ZedMono Nerd Font"
+# normal.family = "ZedMono Nerd Font"
+# bold.family = "ZedMono Nerd Font"
+# italic.family = "ZedMono Nerd Font"
+# bold_italic.family = "ZedMono Nerd Font"
+# normal.family = "SFMono Nerd Font"
+# bold.family = "SFMono Nerd Font"
+# italic.family = "SFMono Nerd Font"
+# bold_italic.family = "SFMono Nerd Font"
+
+normal.family = "agave NFM"
+bold.family = "agave NFM"
+italic.family = "agave NFM"
+bold_italic.family = "agave NFM"
 
 size = 18.0
 
