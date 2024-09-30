@@ -1,33 +1,14 @@
 return {
   -- add gruvbox
-  {
-    "catppuccin/nvim",
-    name = "catppuccin",
-    priority = 1000,
-    opts = {
-      flavour = "mocha",
-      transparent_background = true,
-    },
-  },
   -- {
-  --   "morhetz/gruvbox",
+  --   "catppuccin/nvim",
+  --   name = "catppuccin",
+  --   priority = 1000,
   --   opts = {
-  --     gruvbox_material_background = "hard",
+  --     flavour = "mocha",
+  --     transparent_background = true,
   --   },
   -- },
-  --
-  {
-    "rose-pine/neovim",
-    name = "rose-pine",
-    opts = {
-      variant = "main", -- auto, main, moon, or dawn
-      styles = {
-        bold = true,
-        italic = true,
-        -- transparency = true,
-      },
-    },
-  },
 
   {
     "sainnhe/gruvbox-material",
@@ -40,22 +21,57 @@ return {
     end,
   },
 
+  -- {
+  --   "tokyonight.nvim",
+  --   opts = {
+  --     transparent = true,
+  --     styles = {
+  --       sidebars = "transparent",
+  --       floats = "transparent",
+  --     },
+  --   },
+  -- },
+
+  -- {
+  --   "rebelot/kanagawa.nvim",
+  --   opts = {
+  --     -- transparent = true,
+  --     colors = {
+  --       theme = {
+  --         all = {
+  --           ui = {
+  --             bg_gutter = "none",
+  --           },
+  --         },
+  --       },
+  --     },
+  --   },
+  -- },
+
   {
-    "tokyonight.nvim",
+    "AlexvZyl/nordic.nvim",
+    lazy = false,
+    priority = 1000,
     opts = {
-      transparent = true,
-      styles = {
-        sidebars = "transparent",
-        floats = "transparent",
-      },
+      -- transparent_bg = true,
     },
   },
+  --
+  -- {
+  --   "Mofiqul/vscode.nvim",
+  -- },
+
+  { "miikanissi/modus-themes.nvim", priority = 1000 },
 
   -- Configure LazyVim to load gruvbox
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "gruvbox-material",
+      colorscheme = "nordic",
+      -- colorscheme = "gruvbox-material",
+      -- colorscheme = "modus",
+      -- colorscheme = "randomhue",
+      -- colorscheme = "minicyan",
     },
   },
 }
