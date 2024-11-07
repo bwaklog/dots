@@ -11,26 +11,39 @@ local config = wezterm.config_builder()
 -- config.color_scheme = "Gruvbox Material (Gogh)"
 -- config.color_scheme = "GruvboxDarkHard"
 -- config.color_scheme = "Ayu Dark (Gogh)"
+-- config.color_scheme = "UltraDark"
+-- config.color_scheme = "Ubuntu"
+-- config.color_scheme = "flexoki-dark"
+-- config.color_scheme = "Hacktober"
+-- config.color_scheme = "Dark Pastel"
+-- config.color_scheme = "Kanagawa Dragon (Gogh)"
+-- config.color_scheme = "Kanagawa (Gogh)"
+-- config.color_scheme = "Rosé Pine (Gogh)"
+config.color_scheme = "flexoki-dark"
+config.color_scheme = "Floraverse"
 
 -- config.font = wezterm.font("Iosevka Custom")
 -- config.font = wezterm.font_with_fallback({ "Go Mono for Powerline" })
 -- config.font = wezterm.font_with_fallback({ "CaskaydiaCove Nerd Font" })
--- config.font = wezterm.font_with_fallback({ "Victor Mono" }, { weight = "Medium" })
-config.font = wezterm.font_with_fallback({ "agave Nerd Font Mono" }, { weight = "Medium" })
+config.font = wezterm.font_with_fallback({ "Victor Mono" }, { weight = "Medium" })
+-- config.font = wezterm.font_with_fallback({ "agave Nerd Font Mono" }, { weight = "Medium" })
 -- config.font = wezterm.font_with_fallback({ "ZedMono Nerd Font" }, { weight = "Medium" })
--- config.font = wezterm.font_with_fallback({ "ZedMono Nerd Font" }, { weight = "Medium" })
+-- config.font = wezterm.font_with_fallback({ "UbuntuMono Nerd Font" }, { weight = "Regular" })
+-- config.font = wezterm.font_with_fallback({ "ProggyCleanSZ Nerd Font Mono" })
 
-config.font_size = 18.0
+config.font_shaper = "Harfbuzz"
+config.front_end = "WebGpu"
+config.font_size = 17.0
 
--- config.window_background_opacity = 0.8
--- config.macos_window_background_blur = 50
+config.window_background_opacity = 1
+config.macos_window_background_blur = 75
 --
 
 config.window_padding = {
-	left = 20,
-	right = 20,
-	top = 40,
-	bottom = 10,
+	left = 10,
+	right = 10,
+	top = 10,
+	bottom = 0,
 }
 
 -- win splitting config
@@ -50,7 +63,7 @@ config.keys = {
 }
 
 -- win decorations
-config.window_decorations = "RESIZE"
+config.window_decorations = "RESIZE|MACOS_FORCE_DISABLE_SHADOW"
 config.window_close_confirmation = "NeverPrompt"
 config.adjust_window_size_when_changing_font_size = false
 
@@ -58,9 +71,9 @@ config.adjust_window_size_when_changing_font_size = false
 config.initial_cols = 120
 config.initial_rows = 35
 
-config.use_fancy_tab_bar = false
+config.use_fancy_tab_bar = true
 -- config.hide_tab_bar_if_only_one_tab = true
-config.tab_bar_at_bottom = false
+config.tab_bar_at_bottom = true
 config.enable_tab_bar = true
 
 -- and finally, return the configuration to wezterm

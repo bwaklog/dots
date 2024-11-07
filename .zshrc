@@ -12,7 +12,7 @@ export ZSH="$HOME/.oh-my-zsh"
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 # ZSH_THEME="sammy"
 #ZSH_THEME="robbyrussell"
-eval "$(oh-my-posh init zsh --config ~/dots/.config/ohmyposh/base.toml)"
+# eval "$(oh-my-posh init zsh --config ~/dots/.config/ohmyposh/base.toml)"
 
 # oh my posh config 
 # if [ "$TERM_PROGRAM" != "Apple_Terminal" ]; then
@@ -222,7 +222,7 @@ alias cat='bat'
 # function to use make and build file and use leaks 
 
 # export PATH=”$HOME/.emacs.d/bin:$PATH”
-export PATH="~/.config/emacs/bin:$PATH"
+# export PATH="~/.config/emacs/bin:$PATH"
 export PATH="$PATH:/Applications/WezTerm.app/Contents/MacOS"
 
 # export MANPATH="/usr/local/man:$MANPATH"
@@ -254,8 +254,8 @@ export PATH
 
 #
 export GPG_TTY=$(tty)
-export GOPATH=$HOME/go
-export PATH=$PATH:$GOPATH/bin
+export GOPATH=$HOME/user/local/go
+export PATH=$PATH:$GOPATH
 export PATH="$HOME/.emacs.d/bin:$PATH"
 
 # Brew completions
@@ -285,10 +285,25 @@ GIT_EDITOR=nvim
 alias v='nvim'
 alias python='python3'
 alias gitdiff='git difftool --tool=nvimdiff'
-alias emacs='emacs --no-window-system'
+# alias emacs='emacs --no-window-system'
 
 NNN_PLUG='l:-!git log;o:-!&zed "$nnn";v:-!nvim "$nnn"'
 export NNN_PLUG
+
+set -o vi
+
+autoload -z edit-command-line
+zle -N edit-command-line
+bindkey "^X^E" edit-command-line
+
+
+autoload -Uz vcs_info
+precmd_vcs_info() { vcs_info }
+precmd_functions+=( precmd_vcs_info )
+setopt prompt_subst
+RPROMPT='${vcs_info_msg_0_}'
+PROMPT='ln(%1~) '
+zstyle ':vcs_info:git:*' formats '%b'
 
 source <(fzf --zsh)
 
@@ -300,6 +315,12 @@ source <(fzf --zsh)
 alias tsc="tailscale"
 
 export NVM_DIR="$HOME/.nvm"
+
+# does not work??
+export PATH="~/.config/emacs/bin/:$PATH"
+
+alias doom="~/.config/emacs/bin/doom"
+
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
