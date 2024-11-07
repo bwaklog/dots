@@ -17,7 +17,10 @@ set termguicolors
 " Plug 'airblade/vim-gitgutter'
 
 " colorscheme
-Plug 'morhetz/gruvbox'
+"Plug 'morhetz/gruvbox'
+"Plug 'nordtheme/vim'
+"Plug 'kepano/flexoki-neovim'
+Plug 'chriskempson/base16-vim'
 
 " List your plugins here
 Plug 'tpope/vim-sensible'
@@ -30,13 +33,14 @@ Plug 'junegunn/fzf.vim'
 
 " Interfaces
 " Plug 'catppuccin/vim', { 'as': 'catppuccin' }
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
-let g:airline_theme='transparent'
+"Plug 'vim-airline/vim-airline'
+" Plug 'vim-airline/vim-airline-themes'
+" let g:airline_theme='transparent'
 
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 
+" Plug 'romgrk/doom-one.vim'
 
 call plug#end()
 " 
@@ -48,7 +52,9 @@ set list
 set showbreak=↪
 set listchars=tab:→\ ,eol:↲,nbsp:␣,trail:•,extends:⟩,precedes:⟨
 set background=dark
-colorscheme gruvbox
+" colorscheme nord
+" colorscheme base16-black-metal
+" colorscheme base16-grayscale-dark
 
 let s:hidden_all = 0
 function! ToggleHiddenAll()
@@ -68,5 +74,15 @@ function! ToggleHiddenAll()
 	set number relativenumber
     endif
 endfunction
+
+noremap <Left> <NOP>
+noremap <Right> <NOP>
+noremap <Up> <NOP>
+noremap <Down> <NOP>
+
+inoremap <Left> <NOP>
+inoremap <Right> <NOP>
+inoremap <Up> <NOP>
+inoremap <Down> <NOP>
 
 nnoremap <S-h> :call ToggleHiddenAll()<CR>

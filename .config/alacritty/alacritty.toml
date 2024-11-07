@@ -1,44 +1,32 @@
-# import = ["~/alacritty-theme/themes/ayu_dark.toml"]
-# import = ["~/alacritty-theme/themes/base16_default_dark.toml"]
+import = ["~/alacritty-theme/themes/pastel_dark.toml"]
 
 live_config_reload = true
 
 [window]
-# window configuration
-padding.x = 8
+padding.x = 10
 padding.y = 10
 dynamic_padding = true
 
 decorations = "buttonless"
 
-# opacity = 1
-# blur = true
+opacity = 0.99
+blur = true
+
+[env]
+term = "xterm-256color"
 
 [font]
+normal.family = "BlexMono Nerd Font Mono"
+bold.family = "BlexMono Nerd Font Mono"
+italic.family = "BlexMono Nerd Font Mono"
+bold_italic.family = "BlexMono Nerd Font Mono"
 
-
-# normal.family = "ZedMono Nerd Font"
-# bold.family = "ZedMono Nerd Font"
-# italic.family = "ZedMono Nerd Font"
-# bold_italic.family = "ZedMono Nerd Font"
-# normal.family = "SFMono Nerd Font"
-# bold.family = "SFMono Nerd Font"
-# italic.family = "SFMono Nerd Font"
-# bold_italic.family = "SFMono Nerd Font"
-
-normal.family = "agave NFM"
-bold.family = "agave NFM"
-italic.family = "agave NFM"
-bold_italic.family = "agave NFM"
-
-size = 18.0
+size = 19.0
 
 [cursor]
-
 style.blinking = "Always"
 
 [debug]
-
 # render_timer = true
 
 [keyboard]

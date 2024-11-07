@@ -1,14 +1,14 @@
 return {
   -- add gruvbox
-  -- {
-  --   "catppuccin/nvim",
-  --   name = "catppuccin",
-  --   priority = 1000,
-  --   opts = {
-  --     flavour = "mocha",
-  --     transparent_background = true,
-  --   },
-  -- },
+  {
+    "catppuccin/nvim",
+    name = "catppuccin",
+    priority = 1000,
+    opts = {
+      flavour = "mocha",
+      transparent_background = true,
+    },
+  },
 
   {
     "sainnhe/gruvbox-material",
@@ -21,32 +21,7 @@ return {
     end,
   },
 
-  -- {
-  --   "tokyonight.nvim",
-  --   opts = {
-  --     transparent = true,
-  --     styles = {
-  --       sidebars = "transparent",
-  --       floats = "transparent",
-  --     },
-  --   },
-  -- },
-
-  -- {
-  --   "rebelot/kanagawa.nvim",
-  --   opts = {
-  --     -- transparent = true,
-  --     colors = {
-  --       theme = {
-  --         all = {
-  --           ui = {
-  --             bg_gutter = "none",
-  --           },
-  --         },
-  --       },
-  --     },
-  --   },
-  -- },
+  { "kepano/flexoki-neovim", name = "flexoki" },
 
   {
     "AlexvZyl/nordic.nvim",
@@ -56,20 +31,67 @@ return {
       -- transparent_bg = true,
     },
   },
-  --
-  -- {
-  --   "Mofiqul/vscode.nvim",
-  -- },
 
-  { "miikanissi/modus-themes.nvim", priority = 1000 },
+  -- { "RRethy/base16-nvim" },
 
-  -- Configure LazyVim to load gruvbox
+  {
+    "rebelot/kanagawa.nvim",
+    config = function()
+      -- Default options:
+      require("kanagawa").setup({
+        compile = false, -- enable compiling the colorscheme
+        undercurl = true, -- enable undercurls
+        commentStyle = { italic = true },
+        functionStyle = {},
+        keywordStyle = { italic = true },
+        statementStyle = { bold = true },
+        typeStyle = {},
+        transparent = true, -- do not set background color
+        dimInactive = false, -- dim inactive window `:h hl-NormalNC`
+        terminalColors = true, -- define vim.g.terminal_color_{0,17}
+        colors = { -- add/modify theme and palette colors
+          palette = {},
+          theme = {
+            wave = {},
+            lotus = {},
+            dragon = {},
+            all = {
+              ui = {
+                bg_gutter = "none",
+              },
+            },
+          },
+        },
+        overrides = function(colors) -- add/modify highlights
+          return {}
+        end,
+        theme = "dragon", -- Load "wave" theme when 'background' option is not set
+        background = { -- map the value of 'background' option to a theme
+          dark = "wave", -- try "dragon" !
+          light = "lotus",
+        },
+      })
+    end,
+  },
+
+  {
+    "rose-pine/neovim",
+    name = "rose-pine",
+    opts = {
+      styles = {
+        transparency = true,
+      },
+    },
+  },
+
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "nordic",
+      -- colorscheme = "nordic",
+      colorscheme = "rose-pine",
+      -- colorscheme = "kanagawa-dragon",
       -- colorscheme = "gruvbox-material",
-      -- colorscheme = "modus",
+      -- colorscheme = "flexoki-dark",
       -- colorscheme = "randomhue",
       -- colorscheme = "minicyan",
     },
