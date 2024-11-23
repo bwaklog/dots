@@ -1,1 +1,1 @@
-# cmd + shift - t : osascript -e 'tell application "Kitty" to create window with default profile command ""' || open -na Kitty
+cmd + shift - t : open -na Alacritty 

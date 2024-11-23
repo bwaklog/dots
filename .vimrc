@@ -48,6 +48,7 @@ call plug#end()
 " " Set leader key to space
 " let mapleader = " "
 
+set softtabstop=0 noexpandtab
 set list
 set showbreak=↪
 set listchars=tab:→\ ,eol:↲,nbsp:␣,trail:•,extends:⟩,precedes:⟨

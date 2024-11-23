@@ -19,23 +19,26 @@ local config = wezterm.config_builder()
 -- config.color_scheme = "Kanagawa Dragon (Gogh)"
 -- config.color_scheme = "Kanagawa (Gogh)"
 -- config.color_scheme = "Rosé Pine (Gogh)"
-config.color_scheme = "flexoki-dark"
-config.color_scheme = "Floraverse"
+-- config.color_scheme = "flexoki-dark"
+-- config.color_scheme = "Floraverse"
+config.color_scheme = "Dark Pastel (Gogh)"
 
 -- config.font = wezterm.font("Iosevka Custom")
 -- config.font = wezterm.font_with_fallback({ "Go Mono for Powerline" })
 -- config.font = wezterm.font_with_fallback({ "CaskaydiaCove Nerd Font" })
-config.font = wezterm.font_with_fallback({ "Victor Mono" }, { weight = "Medium" })
+-- config.font = wezterm.font_with_fallback({ "Victor Mono" }, { weight = "Medium" })
 -- config.font = wezterm.font_with_fallback({ "agave Nerd Font Mono" }, { weight = "Medium" })
 -- config.font = wezterm.font_with_fallback({ "ZedMono Nerd Font" }, { weight = "Medium" })
 -- config.font = wezterm.font_with_fallback({ "UbuntuMono Nerd Font" }, { weight = "Regular" })
+config.font = wezterm.font_with_fallback({ "BlexMono Nerd Font Mono" }, { weight = "Regular" })
 -- config.font = wezterm.font_with_fallback({ "ProggyCleanSZ Nerd Font Mono" })
 
 config.font_shaper = "Harfbuzz"
 config.front_end = "WebGpu"
-config.font_size = 17.0
+config.font_size = 18.0
+config.max_fps = 120
 
-config.window_background_opacity = 1
+config.window_background_opacity = 0.90
 config.macos_window_background_blur = 75
 --
 
