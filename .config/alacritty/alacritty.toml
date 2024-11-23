@@ -1,4 +1,5 @@
 import = ["~/alacritty-theme/themes/pastel_dark.toml"]
+# import = ["~/alacritty-theme/themes/rose-pine.toml"]
 
 live_config_reload = true
 
@@ -9,7 +10,7 @@ dynamic_padding = true
 
 decorations = "buttonless"
 
-opacity = 0.99
+opacity = 0.83
 blur = true
 
 [env]
@@ -21,7 +22,7 @@ bold.family = "BlexMono Nerd Font Mono"
 italic.family = "BlexMono Nerd Font Mono"
 bold_italic.family = "BlexMono Nerd Font Mono"
 
-size = 19.0
+size = 15.0
 
 [cursor]
 style.blinking = "Always"

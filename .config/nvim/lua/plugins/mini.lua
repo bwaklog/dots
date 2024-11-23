@@ -1,9 +1,13 @@
 return {
+  { "echasnovski/mini.nvim", version = "*" },
   {
-    "echasnovski/mini.nvim",
+    "echasnovski/mini.icons",
     version = "*",
-    init = function()
-      -- require("mini.statusline").setup()
+    config = function()
+      require("mini.icons").setup()
     end,
   },
+  config = function()
+    require("mini.statusline").setup()
+  end,
 }

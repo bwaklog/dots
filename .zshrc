@@ -217,7 +217,7 @@ alias glog="git log --oneline --graph --all"
 alias gcan="git commit --amend --no-edit"
 alias gfp="git add .; git commit --amend --no-edit; git push origin main --force"
 alias fastfetch='fastfetch --logo none'
-alias cat='bat'
+alias cat='bat --style plain -n'
 
 # function to use make and build file and use leaks 
 
@@ -255,7 +255,8 @@ export PATH
 #
 export GPG_TTY=$(tty)
 export GOPATH=$HOME/user/local/go
-export PATH=$PATH:$GOPATH
+export GOBIN=$HOME/user/local/go/bin/
+export PATH=$PATH:$GOPATH:$GOBIN
 export PATH="$HOME/.emacs.d/bin:$PATH"
 
 # Brew completions
@@ -278,14 +279,18 @@ export LDFLAGS="-L/opt/homebrew/opt/libffi/lib"
 export CPPFLAGS="-I/opt/homebrew/opt/libffi/include"
 export PKG_CONFIG_PATH="/opt/homebrew/lib/pkgconfig:/opt/homebrew/opt/libffi/lib/pkgconfig:/opt/homebrew/opt/zlib/lib/pkgconfig:/opt/homebrew/opt/gtk+3/lib/pkgconfig:/opt/homebrew/opt/expat/lib/pkgconfig"
 
-EDITOR=nvim
-VISUAL=nvim
-GIT_EDITOR=nvim
+EDITOR=nvim;
+VISUAL=nvim;
+GIT_EDITOR=nvim;
 
 alias v='nvim'
 alias python='python3'
 alias gitdiff='git difftool --tool=nvimdiff'
 # alias emacs='emacs --no-window-system'
+
+alias cdf='cd $(dirname $(fzf -e))'
+alias nfd='cd $(dirname $(fzf -e)); nvim .'
+alias nf='nvim $(fzf -e)'
 
 NNN_PLUG='l:-!git log;o:-!&zed "$nnn";v:-!nvim "$nnn"'
 export NNN_PLUG
@@ -301,8 +306,9 @@ autoload -Uz vcs_info
 precmd_vcs_info() { vcs_info }
 precmd_functions+=( precmd_vcs_info )
 setopt prompt_subst
+# RPROMPT='${vcs_info_msg_0_} $(date +%H:%M:%S)'
 RPROMPT='${vcs_info_msg_0_}'
-PROMPT='ln(%1~) '
+PROMPT="ln(%1~) "
 zstyle ':vcs_info:git:*' formats '%b'
 
 source <(fzf --zsh)
@@ -335,5 +341,11 @@ unsetopt beep
 # fortune | lolcat
 fortune
 
+source "$HOME/shorts.sh"
+
 # Yeah we dont talk about this
 # [[ $TERM == "xterm-kitty" ]] && kitten icat --align left go.png
+
+export WASMTIME_HOME="$HOME/.wasmtime"
+
+export PATH="$WASMTIME_HOME/bin:$PATH"
