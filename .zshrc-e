@@ -306,18 +306,16 @@ autoload -Uz vcs_info
 precmd_vcs_info() { vcs_info }
 precmd_functions+=( precmd_vcs_info )
 setopt prompt_subst
-RPROMPT='${vcs_info_msg_0_} $(date +%H:%M) 🎄'
-# RPROMPT='${vcs_info_msg_0_} 🎄'
-PROMPT="log(%1~) "
+# RPROMPT='${vcs_info_msg_0_} $(date +%H:%M:%S)'
+RPROMPT='${vcs_info_msg_0_}'
+PROMPT="ln(%1~) "
 zstyle ':vcs_info:git:*' formats '%b'
 
 source <(fzf --zsh)
 
-# [[ $TERM == "xterm-kitty" ]] && alias ssh="TERM=xterm-256color ssh"
-# [[ $TERM == "xterm-kitty" ]] && alias limactl="TERM=xterm-256color limactl"
-# [[ $TERM == "xterm-kitty" ]] && alias ssh="kitten ssh"
-
-alias ssh="TERM=xterm-256color ssh"
+[[ $TERM == "xterm-kitty" ]] && alias ssh="TERM=xterm-256color ssh"
+[[ $TERM == "xterm-kitty" ]] && alias limactl="TERM=xterm-256color limactl"
+[[ $TERM == "xterm-kitty" ]] && alias ssh="kitten ssh"
 
 [[ -f "$HOME/fig-export/dotfiles/dotfile.zsh" ]] && builtin source "$HOME/fig-export/dotfiles/dotfile.zsh"
 alias tsc="tailscale"
@@ -351,7 +349,3 @@ source "$HOME/shorts.sh"
 export WASMTIME_HOME="$HOME/.wasmtime"
 
 export PATH="$WASMTIME_HOME/bin:$PATH"
-
-[ -f "/Users/adityahegde/.ghcup/env" ] && . "/Users/adityahegde/.ghcup/env" # ghcup-env
-
-. "$HOME/.cargo/env"
