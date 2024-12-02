@@ -1,10 +1,13 @@
-theme = "default"
+# theme = "default"
+theme = "autumn_night"
+# theme = "merionette"
 
 # Yoinked off config for vim-like keybindings
 # need to give credits
 
 [editor]
 mouse = true
+line-number = "relative"
 
 [editor.lsp]
 display-inlay-hints = true
