@@ -7,38 +7,33 @@ local config = wezterm.config_builder()
 -- This is where you actually apply your config choices
 
 -- For example, changing the color scheme:
--- config.color_scheme = "Catppuccin Mocha"
--- config.color_scheme = "Gruvbox Material (Gogh)"
--- config.color_scheme = "GruvboxDarkHard"
--- config.color_scheme = "Ayu Dark (Gogh)"
--- config.color_scheme = "UltraDark"
--- config.color_scheme = "Ubuntu"
--- config.color_scheme = "flexoki-dark"
--- config.color_scheme = "Hacktober"
--- config.color_scheme = "Dark Pastel"
--- config.color_scheme = "Kanagawa Dragon (Gogh)"
--- config.color_scheme = "Kanagawa (Gogh)"
--- config.color_scheme = "Rosé Pine (Gogh)"
--- config.color_scheme = "flexoki-dark"
--- config.color_scheme = "Floraverse"
-config.color_scheme = "Dark Pastel (Gogh)"
 
--- config.font = wezterm.font("Iosevka Custom")
--- config.font = wezterm.font_with_fallback({ "Go Mono for Powerline" })
--- config.font = wezterm.font_with_fallback({ "CaskaydiaCove Nerd Font" })
--- config.font = wezterm.font_with_fallback({ "Victor Mono" }, { weight = "Medium" })
--- config.font = wezterm.font_with_fallback({ "agave Nerd Font Mono" }, { weight = "Medium" })
--- config.font = wezterm.font_with_fallback({ "ZedMono Nerd Font" }, { weight = "Medium" })
--- config.font = wezterm.font_with_fallback({ "UbuntuMono Nerd Font" }, { weight = "Regular" })
-config.font = wezterm.font_with_fallback({ "BlexMono Nerd Font Mono" }, { weight = "Regular" })
--- config.font = wezterm.font_with_fallback({ "ProggyCleanSZ Nerd Font Mono" })
+function Scheme_for_appearance(appearance)
+	if appearance:find("Dark") then
+		return "rose-pine"
+	else
+		return "rose-pine-dawn"
+	end
+end
+
+wezterm.on("window-config-reloaded", function(window, pane)
+	local overrides = window:get_config_overrides() or {}
+	local appearance = window:get_appearance()
+	local scheme = Scheme_for_appearance(appearance)
+	if overrides.color_scheme ~= scheme then
+		overrides.color_scheme = scheme
+		window:set_config_overrides(overrides)
+	end
+end)
+
+config.font = wezterm.font_with_fallback({ "BlexMono Nerd Font Mono" }, { weight = "Medium" })
 
 config.font_shaper = "Harfbuzz"
 config.front_end = "WebGpu"
 config.font_size = 18.0
 config.max_fps = 120
 
-config.window_background_opacity = 0.90
+config.window_background_opacity = 0.85
 config.macos_window_background_blur = 75
 --
 
