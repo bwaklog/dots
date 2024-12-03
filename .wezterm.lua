@@ -16,7 +16,7 @@ function Scheme_for_appearance(appearance)
 	end
 end
 
-wezterm.on("window-config-reloaded", function(window, pane)
+wezterm.on("window-config-reloaded", function(window, _)
 	local overrides = window:get_config_overrides() or {}
 	local appearance = window:get_appearance()
 	local scheme = Scheme_for_appearance(appearance)
@@ -26,7 +26,8 @@ wezterm.on("window-config-reloaded", function(window, pane)
 	end
 end)
 
-config.font = wezterm.font_with_fallback({ "BlexMono Nerd Font Mono" }, { weight = "Medium" })
+-- config.font = wezterm.font_with_fallback({ "BlexMono Nerd Font Mono" }, { weight = "Medium" })
+config.font = wezterm.font_with_fallback({ "SauceCodePro Nerd Font Mono" }, { weight = "Medium" })
 
 config.font_shaper = "Harfbuzz"
 config.front_end = "WebGpu"
