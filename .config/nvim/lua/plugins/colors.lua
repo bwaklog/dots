@@ -15,10 +15,12 @@ return {
     priority = 1000,
   },
 
+  { "shaunsingh/nord.nvim" },
+
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "darkrose",
+      colorscheme = "rose-pine",
     },
   },
 }
