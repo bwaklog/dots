@@ -1,7 +1,7 @@
 # font_family BlexMono Nerd Font Mono
-# font_family SauceCodePro Nerd Font Mono
+font_family SauceCodePro Nerd Font Mono
 # font_family Iosevka PragmataPro
-
+#
 font_size 18.0
 map ctrl+c send_text all \x03
 background_opacity 0.85
@@ -56,11 +56,3 @@ map super+right send_text all \x05
 # Rosé Pine
 include current-theme.conf
 # END_KITTY_THEME
-
-
-# BEGIN_KITTY_FONTS
-font_family      family='SauceCodePro Nerd Font Mono' postscript_name=SauceCodeProNFM
-bold_font        auto
-italic_font      auto
-bold_italic_font auto
-# END_KITTY_FONTS
