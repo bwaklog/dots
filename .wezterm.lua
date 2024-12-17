@@ -3,7 +3,6 @@ local wezterm = require("wezterm")
 
 -- This will hold the configuration.
 local config = wezterm.config_builder()
-
 -- This is where you actually apply your config choices
 
 -- For example, changing the color scheme:
@@ -27,14 +26,15 @@ wezterm.on("window-config-reloaded", function(window, _)
 end)
 
 -- config.font = wezterm.font_with_fallback({ "BlexMono Nerd Font Mono" }, { weight = "Medium" })
-config.font = wezterm.font_with_fallback({ "SauceCodePro Nerd Font Mono" }, { weight = "Medium" })
+-- config.font = wezterm.font_with_fallback({ "SauceCodePro Nerd Font Mono" }, { weight = "Medium" })
+config.font = wezterm.font_with_fallback({ "BerkeleyMono Nerd Font Mono" }, { weight = "Medium" })
 
 config.font_shaper = "Harfbuzz"
 config.front_end = "WebGpu"
-config.font_size = 18.0
+config.font_size = 15.0
 config.max_fps = 120
 
-config.window_background_opacity = 0.85
+config.window_background_opacity = 0.95
 config.macos_window_background_blur = 75
 --
 

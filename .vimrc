@@ -6,56 +6,48 @@
 set relativenumber number
 syntax on
 set ignorecase
+set termguicolors
 " 
-call plug#begin()
+" call plug#begin()
 " 
 " Language Related
-Plug 'fatih/vim-go'
-
-set termguicolors
-
+" Plug 'fatih/vim-go'
 " Plug 'airblade/vim-gitgutter'
-
 " colorscheme
 "Plug 'morhetz/gruvbox'
 "Plug 'nordtheme/vim'
 "Plug 'kepano/flexoki-neovim'
-Plug 'chriskempson/base16-vim'
-
+" Plug 'chriskempson/base16-vim'
 " List your plugins here
-Plug 'tpope/vim-sensible'
-
-Plug 'prabirshrestha/vim-lsp'
-Plug 'mattn/vim-lsp-settings'
-
+" Plug 'tpope/vim-sensible'
+" Plug 'prabirshrestha/vim-lsp'
+" Plug 'mattn/vim-lsp-settings'
 " Quality of Life plugins
-Plug 'junegunn/fzf.vim'
-
+" Plug 'junegunn/fzf.vim'
 " Interfaces
 " Plug 'catppuccin/vim', { 'as': 'catppuccin' }
 "Plug 'vim-airline/vim-airline'
 " Plug 'vim-airline/vim-airline-themes'
 " let g:airline_theme='transparent'
-
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'junegunn/fzf.vim'
-
+" Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+" Plug 'junegunn/fzf.vim'
 " Plug 'romgrk/doom-one.vim'
+" call plug#end()
 
-call plug#end()
-" 
 " " shortcut
 " " Set leader key to space
 " let mapleader = " "
-
 set softtabstop=0 noexpandtab
 set list
 set showbreak=↪
 set listchars=tab:→\ ,eol:↲,nbsp:␣,trail:•,extends:⟩,precedes:⟨
 set background=dark
-" colorscheme nord
-" colorscheme base16-black-metal
-" colorscheme base16-grayscale-dark
+
+filetype plugin on
+
+set path+=**
+set wildmenu
+
 
 let s:hidden_all = 0
 function! ToggleHiddenAll()
