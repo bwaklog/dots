@@ -1,29 +1,29 @@
 [window]
-padding.x = 10
-padding.y = 10
+padding.x = 5
+padding.y = 5
 dynamic_padding = true
 
 decorations = "buttonless"
 
-opacity = 0.95
+opacity = 0.98
 blur = true
 
 [env]
 term = "xterm-256color"
 
 [font]
-# normal.family = "BlexMono Nerd Font Mono"
-# bold.family = "BlexMono Nerd Font Mono"
-# italic.family = "BlexMono Nerd Font Mono"
-# bold_italic.family = "BlexMono Nerd Font Mono"
+normal.family = "BerkeleyMono Nerd Font Mono"
+bold.family = "BerkeleyMono Nerd Font Mono"
+italic.family = "BerkeleyMono Nerd Font Mono"
+bold_italic.family = "BerkeleyMono Nerd Font Mono"
 
-normal.family = "SauceCodePro Nerd Font Mono"
-bold.family = "SauceCodePro Nerd Font Mono"
-italic.family = "SauceCodePro Nerd Font Mono"
-bold_italic.family = "SauceCodePro Nerd Font Mono"
+# normal.family = "SauceCodePro Nerd Font Mono"
+# bold.family = "SauceCodePro Nerd Font Mono"
+# italic.family = "SauceCodePro Nerd Font Mono"
+# bold_italic.family = "SauceCodePro Nerd Font Mono"
 
 
-size = 18.0
+size = 14.0
 
 [cursor]
 style.blinking = "Always"
@@ -41,5 +41,8 @@ bindings = [
 
 live_config_reload = true
 
+# import = ["~/alacritty-theme/themes/gruvbox_material.toml"]
+import = ["~/alacritty-theme/themes/rose-pine-moon.toml"]
 # import = ["~/alacritty-theme/themes/pastel_dark.toml"]
-import = ["~/alacritty-theme/themes/rose-pine.toml"]
+# import = ["~/alacritty-theme/themes/rose-pine.toml"]
+# import = ["~/alacritty-theme/themes/rose-pine-dawn.toml"]

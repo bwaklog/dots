@@ -23,7 +23,7 @@ function cloudCollegeDir() {
 }
 
 function obsidianDir() {
-   cd ~/Library/Mobile\ Documents/iCloud\~md\~obsidian/Documents/College
+   cd ~/Library/Mobile\ Documents/iCloud\~md\~obsidian/Documents/
 }
 
 function doit() {
@@ -156,7 +156,8 @@ autoload -Uz vcs_info
 precmd_vcs_info() { vcs_info }
 precmd_functions+=( precmd_vcs_info )
 setopt prompt_subst
-RPROMPT='%F{yellow}${vcs_info_msg_0_}%f $(date +%H:%M) 🎄'
+# RPROMPT='%F{yellow}${vcs_info_msg_0_}%f $(date +%H:%M) 🎄'
+RPROMPT='%F{yellow}${vcs_info_msg_0_}%f $(date +%H:%M)'
 # RPROMPT='${vcs_info_msg_0_} 🎄'
 PROMPT="%(?.%F{yellow}.%F{red})*%flog(%1~) "
 zstyle ':vcs_info:git:*' formats '%b'
