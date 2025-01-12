@@ -4,7 +4,7 @@ return {
     name = "rose-pine",
     opts = {
       styles = {
-        -- transparency = true,
+        transparency = true,
       },
     },
   },
@@ -16,6 +16,8 @@ return {
     lazy = false,
     priority = 1000,
   },
+
+  { "kepano/flexoki-neovim", name = "flexoki" },
 
   {
     "sainnhe/gruvbox-material",
@@ -33,7 +35,7 @@ return {
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "rose-pine-moon",
+      colorscheme = "rose-pine",
     },
   },
 }
