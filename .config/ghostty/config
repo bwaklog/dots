@@ -9,6 +9,7 @@ theme = Builtin Pastel Dark
 font-family = ZedMono Nerd Font
 font-size = 15
 
+
 macos-titlebar-style = hidden
 unfocused-split-opacity = 0.94
 background-opacity = 0.90
