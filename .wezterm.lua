@@ -15,6 +15,14 @@ function Scheme_for_appearance(appearance)
 	end
 end
 
+-- function Scheme_for_appearance(appearance)
+-- 	if appearance:find("Dark") then
+-- 		return "nord"
+-- 	else
+-- 		return "nord-light"
+-- 	end
+-- end
+
 wezterm.on("window-config-reloaded", function(window, _)
 	local overrides = window:get_config_overrides() or {}
 	local appearance = window:get_appearance()
@@ -27,6 +35,7 @@ end)
 
 -- config.font = wezterm.font_with_fallback({ "BlexMono Nerd Font Mono" }, { weight = "Medium" })
 -- config.font = wezterm.font_with_fallback({ "SauceCodePro Nerd Font Mono" }, { weight = "Medium" })
+config.font = wezterm.font_with_fallback({ "CommitMono", "BerkeleyMono Nerd Font Mono" }, { weight = "Medium" })
 config.font = wezterm.font_with_fallback({ "BerkeleyMono Nerd Font Mono" }, { weight = "Medium" })
 
 config.font_shaper = "Harfbuzz"

@@ -17,11 +17,6 @@ bold.family = "BerkeleyMono Nerd Font Mono"
 italic.family = "BerkeleyMono Nerd Font Mono"
 bold_italic.family = "BerkeleyMono Nerd Font Mono"
 
-# normal.family = "SauceCodePro Nerd Font Mono"
-# bold.family = "SauceCodePro Nerd Font Mono"
-# italic.family = "SauceCodePro Nerd Font Mono"
-# bold_italic.family = "SauceCodePro Nerd Font Mono"
-
 
 size = 14.0
 
@@ -32,17 +27,17 @@ style.blinking = "Always"
 # render_timer = true
 
 [keyboard]
-bindings = [
-  { key = "Space", mods = "Option|Control", action = "ToggleViMode" },
-  { key = "Enter", mods = "Option", action = "ToggleSimpleFullscreen" },
-]
+# bindings = [
+#   { key = "Space", mods = "Option|Control", action = "ToggleViMode" },
+#   { key = "Enter", mods = "Option", action = "ToggleSimpleFullscreen" },
+# ]
 
 [general]
 
 live_config_reload = true
 
 # import = ["~/alacritty-theme/themes/gruvbox_material.toml"]
-import = ["~/alacritty-theme/themes/rose-pine-moon.toml"]
+# import = ["~/alacritty-theme/themes/rose-pine-moon.toml"]
 # import = ["~/alacritty-theme/themes/pastel_dark.toml"]
-# import = ["~/alacritty-theme/themes/rose-pine.toml"]
+import = ["~/alacritty-theme/themes/rose-pine.toml"]
 # import = ["~/alacritty-theme/themes/rose-pine-dawn.toml"]

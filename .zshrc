@@ -188,7 +188,8 @@ alias doom="~/.config/emacs/bin/doom"
 unsetopt beep
 # Just so that i read it each time
 # fortune | lolcat
-echo -e "$(/bin/cat ~/tree)"
+# echo -e "$(/bin/cat ~/tree)"
+# pokemon-colorscripts -n ditto --no-title
 fortune
 
 source "$HOME/shorts.sh"
