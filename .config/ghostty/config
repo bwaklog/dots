@@ -3,11 +3,11 @@ theme = light:rose-pine-dawn,dark:rose-pine
 theme = Builtin Pastel Dark
 # theme = 3024 Night
 
-font-family = BerkeleyMono Nerd Font Mono
+# font-family = BerkeleyMono Nerd Font Mono
 # font-family = SauceCodePro Nerd Font Mono
 # font-family = Victor Mono
-# font-family = ZedMono Nerd Font
-font-size = 14
+font-family = ZedMono Nerd Font
+font-size = 15
 
 macos-titlebar-style = hidden
 unfocused-split-opacity = 0.94
