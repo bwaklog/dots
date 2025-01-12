@@ -1,18 +1,13 @@
-# theme = Apple System Colors
-theme = light:rose-pine-dawn,dark:rose-pine
-theme = Builtin Pastel Dark
-# theme = 3024 Night
+# theme = light:rose-pine-dawn,dark:rose-pine
+# theme = Builtin Pastel Dark
 
 # font-family = BerkeleyMono Nerd Font Mono
-# font-family = SauceCodePro Nerd Font Mono
-# font-family = Victor Mono
 font-family = ZedMono Nerd Font
 font-size = 15
 
-
 macos-titlebar-style = hidden
 unfocused-split-opacity = 0.94
-background-opacity = 0.90
+background-opacity = 0.93
 background-blur-radius = 20
 
 keybind = global:ctrl+q=toggle_quick_terminal
@@ -26,3 +21,8 @@ quick-terminal-screen = mouse
 mouse-hide-while-typing = true
 
 bold-is-bright = true
+
+macos-icon = custom-style
+macos-icon-frame = plastic
+macos-icon-ghost-color = BCBEC4
+macos-icon-screen-color = 1E1F22
