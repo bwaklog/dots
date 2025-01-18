@@ -2,3 +2,15 @@ alias ssh="TERM=xterm-256color ssh"
 alias v="nvim"
 
 alias ls="ls --color -l -h"
+
+# git alias
+alias gs="git status"
+alias gl="git log"
+alias glogda="git log --oneline --graph --decorate --abbrev"
+alias glogd="git log --oneline --graph --decorate"
+alias ga="git add"
+alias gaa="git add --all"
+alias gc="git commit"
+alias gcm="git commit -m"
+alias gcan="git commit --ammend --no-edit"
+alias gp="git push"
