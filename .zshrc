@@ -1,9 +1,9 @@
-set -o vi
 source <(fzf --zsh)
-eval "$(starship init zsh)"
+# eval "$(starship init zsh)"
 
 # alias source
 source $HOME/.alias
+source $HOME/shorts.sh
 
 # plugins & extensions
 autoload -U compinit; compinit
@@ -15,3 +15,9 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 eval "$(pyenv init -)"
+
+set -o vi
+
+autoload -z edit-command-line
+zle -N edit-command-line
+bindkey "^X^E" edit-command-line
