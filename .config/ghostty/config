@@ -1,6 +1,9 @@
 # theme = light:rose-pine-dawn,dark:rose-pine
 # theme = Builtin Pastel Dark
 theme = gruvbox-material
+theme = Kanagawa Dragon
+# theme = xcodedarkhc
+# theme = zenbones_dark
 # theme = light:nord-light,dark:nord
 
 # font-family = BerkeleyMono Nerd Font Mono
