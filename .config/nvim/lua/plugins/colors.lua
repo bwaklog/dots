@@ -13,6 +13,27 @@ return {
 
   { "Verf/deepwhite.nvim" },
 
+  { "arzg/vim-colors-xcode" },
+
+  -- {
+  --   "zenbones-theme/zenbones.nvim",
+  --   dependencies = "rktjmp/lush.nvim",
+  -- },
+
+  {
+    "rebelot/kanagawa.nvim",
+    config = function()
+      require("kanagawa").setup({
+        dimInactive = true,
+        colors = {
+          theme = { all = { ui = { bg_gutter = "none" } } },
+        },
+        -- transparent = true,
+      })
+      vim.cmd.colorscheme("kanagawa-dragon")
+    end,
+  },
+
   {
     "sainnhe/gruvbox-material",
     lazy = false,
@@ -23,14 +44,14 @@ return {
       vim.g.gruvbox_material_enable_bold = 1
       vim.g.gruvbox_material_background = "hard"
       vim.g.gruvbox_material_enable_italic = true
-      vim.cmd.colorscheme("gruvbox-material")
+      -- vim.cmd.colorscheme("gruvbox-material")
     end,
   },
 
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "rose-pine",
+      -- colorscheme = "kanagawa-wave",
     },
   },
 }
