@@ -8,9 +8,11 @@ theme = Kanagawa Dragon
 
 # font-family = BerkeleyMono Nerd Font Mono
 # font-family = ZedMono Nerd Font
-font-family = JetBrainsMono Nerd Font
+# font-family = JetBrainsMono Nerd Font
+# font-family = JuliaMono
 # font-family = Monaco
-font-size = 13
+font-family = Jawa
+font-size = 15
 
 macos-titlebar-style = hidden
 unfocused-split-opacity = 0.94

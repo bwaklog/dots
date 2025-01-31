@@ -11,6 +11,8 @@ if status is-interactive
 
     source $HOME/.config/fish/functions/alias.fish
 
+    fzf --fish | source
+
 
     set -g fish_key_bindings fish_vi_key_bindings
 end
