@@ -1,0 +1,15 @@
+[user]
+  name = "Aditya Hegde"
+  email = "aditya.mh@outlook.com"
+  signingKey = "$HOME/.ssh/id_rsa.pub"
+[init]
+  defaultBranch = main
+[color]
+  ui = auto
+[core]
+  excludesfile = ~/.gitignore_global
+  editor = nvim
+[gpg]
+  format = ssh
+[commit]
+  gpgSign = true
