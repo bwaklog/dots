@@ -1,0 +1,39 @@
+# Defaults
+# Mod1 <==> CMD
+set $mod Mod4
+
+# Home row direction keys, like vim
+set $left h
+set $down j
+set $up k
+set $right l
+# Your preferred terminal emulator
+set $term foot
+# Your preferred application launcher
+set $menu rofi
+
+# Visual modifiers
+gaps inner 5
+gaps outer 5
+
+exec --no-startup-id output eDP-1 --mode 1920x1200
+exec --no-startup-id $HOME/.config/polybar/polybar.sh 
+exec --no-startup-id $HOME/.config/i3/start.sh
+output eDP-1 scale 1.5
+
+set $wallpapers_path $HOME/Pictures/wallp/
+output * bg `find $wallpapers_path -type f | shuf -n 1` fill
+
+# Modifiers for volume and brightness
+# github: https://github.com/swaywm/sway/blob/d093c2e3583e785cb308bec74c08a61e8808faf6/config.in#L197
+
+# Special keys to adjust volume via PulseAudio
+bindsym --locked XF86AudioMute exec pactl set-sink-mute \@DEFAULT_SINK@ toggle
+bindsym --locked XF86AudioLowerVolume exec pactl set-sink-volume \@DEFAULT_SINK@ -5%
+bindsym --locked XF86AudioRaiseVolume exec pactl set-sink-volume \@DEFAULT_SINK@ +5%
+bindsym --locked XF86AudioMicMute exec pactl set-source-mute \@DEFAULT_SOURCE@ toggle
+# Special keys to adjust brightness via brightnessctl
+bindsym --locked XF86MonBrightnessDown exec brightnessctl set 5%-
+bindsym --locked XF86MonBrightnessUp exec brightnessctl set 5%+
+# Special key to take a screenshot with grim
+bindsym Print exec grim
