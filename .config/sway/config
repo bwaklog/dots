@@ -12,7 +12,7 @@ set $right l
 # Your preferred terminal emulator
 set $term ghostty
 # Your preferred application launcher
-set $menu rofi -show run
+set $menu rofi -show drun
 
 ### Output configuration
 set $wallpapers_path $HOME/Pictures/wallp/
@@ -20,8 +20,16 @@ output * bg `find $wallpapers_path -type f | shuf -n 1` fill
 
 output eDP-1 scale 1.5
 
+set $opacity 0.98
+for_window [class=".*"] opacity $opacity
+for_window [app_id=".*"] opacity $opacity
+
 gaps inner 5
 gaps outer 5
+
+# default_border none
+# floating_modifier $mod
+default_border pixel 1
 
 #
 #   output HDMI-A-1 resolution 1920x1080 position 1920,0
@@ -42,7 +50,12 @@ gaps outer 5
 # resumed. It will also lock your screen before your computer goes to sleep.
 
 ### Input configuration
-#
+input "type:touchpad" {
+  dwt enabled
+  tap enabled
+  natural_scroll enabled
+  middle_emulation enabled
+}
 # Example configuration:
 #
 #   input "2:14:SynPS/2_Synaptics_TouchPad" {
@@ -67,6 +80,9 @@ gaps outer 5
 
     # Start your launcher
     bindsym $mod+d exec $menu
+
+    # grim + slurp
+    bindsym $mod+shift+p exec grim -g "$(slurp -d)" - | wl-copy -t image/png
 
     # Drag floating windows by holding down $mod and left mouse button.
     # Resize them with right mouse button + $mod.
