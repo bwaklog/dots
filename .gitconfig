@@ -1,7 +1,7 @@
 [user]
   name = "Aditya Hegde"
   email = "aditya.mh@outlook.com"
-  signingKey = "$HOME/.ssh/id_rsa.pub"
+  signingKey = ~/.ssh/id_ed25519.pub
 [init]
   defaultBranch = main
 [color]
@@ -13,3 +13,5 @@
   format = ssh
 [commit]
   gpgSign = true
+[safe]
+	directory = /srv/git/*
