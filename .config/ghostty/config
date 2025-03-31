@@ -13,7 +13,7 @@ background = 000000
 # font-family = CommitMonoV143
 # font-family = Jawa
 # font-family = SauceCodePro Nerd Font
-font-size = 14
+font-size = 13
 
 # window-decoration = false
 # macos-titlebar-style = hidden
