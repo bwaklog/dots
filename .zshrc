@@ -9,8 +9,10 @@ source $HOME/shorts.sh
 autoload -U compinit; compinit
 source $HOME/.zsh_plugins/fzf_tab/fzf-tab.plugin.zsh
 source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source $HOME/shorts.sh
 
 export NVM_DIR="$HOME/.nvm"
+export PATH=$NVM_DIR:$PATH
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 

@@ -7,43 +7,19 @@ local config = wezterm.config_builder()
 
 -- For example, changing the color scheme:
 
-function Scheme_for_appearance(appearance)
-	if appearance:find("Dark") then
-		return "rose-pine"
-	else
-		return "rose-pine-dawn"
-	end
-end
+config.color_scheme = "Gruvbox Material (Gogh)"
 
--- function Scheme_for_appearance(appearance)
--- 	if appearance:find("Dark") then
--- 		return "nord"
--- 	else
--- 		return "nord-light"
--- 	end
--- end
-
-wezterm.on("window-config-reloaded", function(window, _)
-	local overrides = window:get_config_overrides() or {}
-	local appearance = window:get_appearance()
-	local scheme = Scheme_for_appearance(appearance)
-	if overrides.color_scheme ~= scheme then
-		overrides.color_scheme = scheme
-		window:set_config_overrides(overrides)
-	end
-end)
-
--- config.font = wezterm.font_with_fallback({ "BlexMono Nerd Font Mono" }, { weight = "Medium" })
--- config.font = wezterm.font_with_fallback({ "SauceCodePro Nerd Font Mono" }, { weight = "Medium" })
-config.font = wezterm.font_with_fallback({ "CommitMono", "BerkeleyMono Nerd Font Mono" }, { weight = "Medium" })
-config.font = wezterm.font_with_fallback({ "BerkeleyMono Nerd Font Mono" }, { weight = "Medium" })
+config.font = wezterm.font_with_fallback({ "JetBrainsMono Nerd Font Mono" })
+config.colors = {
+	background = "black",
+}
 
 config.font_shaper = "Harfbuzz"
 config.front_end = "WebGpu"
-config.font_size = 15.0
+config.font_size = 14.0
 config.max_fps = 120
 
-config.window_background_opacity = 0.95
+config.window_background_opacity = 0.98
 config.macos_window_background_blur = 75
 --
 

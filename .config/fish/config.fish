@@ -1,6 +1,6 @@
 if status is-interactive
     # Commands to run in interactive sessions can go here
-    set -gx PATH "$HOME/.rvm/bin" /opt/homebrew/bin /usr/local/opt/ruby/bin "/usr/local/lib/ruby/gems/2.6.3p62/bin" "~/go/bin" /Library/PostgreSQL/17/bin/ /usr/local/bin "$HOME/.config/emacs/bin" $PATH
+    set -gx PATH "$HOME/.rvm/bin" /opt/homebrew/bin /usr/local/opt/ruby/bin "/usr/local/lib/ruby/gems/2.6.3p62/bin" "~/go/bin" /Library/PostgreSQL/17/bin/ /usr/local/bin "$HOME/.config/emacs/bin" "/Users/grogu/.nvm/versions/node/v22.14.0/bin/" $PATH
     set -gx NVM_DIR "$HOME/.nvm" $NVM_DIR
 
     set -gx PATH /usr/local/bin/maelstrom/ $PATH
@@ -14,8 +14,10 @@ if status is-interactive
 
     source $HOME/.config/fish/functions/alias.fish
 
-    fzf --fish | source
+    string match -q "$TERM_PROGRAM" vscode
+    and . (code --locate-shell-integration-path fish)
 
+    fzf --fish | source
 
     set -g fish_key_bindings fish_vi_key_bindings
 end

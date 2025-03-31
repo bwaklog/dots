@@ -4,4 +4,5 @@
 
 vim.opt.showbreak = "↪"
 -- vim.opt.listchars:append("eol:↴, tab:→ ,trail:·,extends:→,precedes:←,space:·")
-vim.opt.listchars:append("tab:→ ,eol:↲,nbsp:␣,trail:•,extends:⟩,precedes:⟨")
+-- vim.opt.listchars:append("tab:→ ,eol:↲,nbsp:␣,trail:•,extends:⟩,precedes:⟨")
+vim.opt.listchars:append("eol:↲")
