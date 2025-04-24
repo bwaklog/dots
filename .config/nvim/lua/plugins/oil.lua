@@ -9,9 +9,19 @@ return {
     -- dependencies = { "nvim-tree/nvim-web-devicons" }, -- use if prefer nvim-web-devicons
     config = function()
       vim.keymap.set("n", "<leader>E", function()
-        require("oil").open_float(".")
+        require("oil").open(".")
       end)
-      require("oil").setup({})
+      require("oil").setup({
+        default_file_explorer = true,
+        view_options = {
+          show_hidden = true,
+        },
+        columns = {
+          "permissions",
+          "size",
+          "mtime",
+        },
+      })
     end,
   },
 }

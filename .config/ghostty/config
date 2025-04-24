@@ -1,27 +1,28 @@
 # theme = light:nord-light,dark:nord
-# theme = Dracula+
 # theme = dark:flexoki-dark,light:flexoki-light
-# theme = Builtin Pastel Dark
-# theme = Apple System Colors
-# theme = Kanagawa Wave
-theme = GruvboxDarkHard
-background = 0A0A0F
-background = 000000
+# theme = GruvboxLightHard
+# theme = gruvbox-material
+theme = dark:GruvboxDarkHard,light:GruvboxLightHard
+theme = dark:Iterm2 Solarized Dark,light: Iterm2 Solarized Light
+theme = dark:catppuccin-mocha,light:catppuccin-latte
+# background = 0A0A0F
+# background = 000000
 
 # font-family = BerkeleyMono Nerd Font Mono
 # font-family = JetBrainsMono Nerd Font
 # font-family = CommitMonoV143
 # font-family = Jawa
+font-family = JuliaMono
 # font-family = SauceCodePro Nerd Font
-font-size = 13
+font-size = 14
 
 # window-decoration = false
 # macos-titlebar-style = hidden
 unfocused-split-opacity = 1
 # background-opacity = 0.96
 # background-blur-radius = 20
-window-padding-x = 10
-window-padding-y = 10
+# window-padding-x = 10
+# window-padding-y = 10
 
 keybind = global:ctrl+q=toggle_quick_terminal
 keybind = ctrl+shift+h=goto_split:left
