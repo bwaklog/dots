@@ -10,4 +10,11 @@ return {
     "echasnovski/mini.pick", -- optional
   },
   config = true,
+  keys = {
+    {
+      "<leader>N",
+      "<cmd>Neogit<CR>",
+      desc = "Open neogit",
+    },
+  },
 }

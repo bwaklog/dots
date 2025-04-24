@@ -56,15 +56,64 @@ return {
       vim.g.gruvbox_material_enable_bold = 1
       vim.g.gruvbox_material_background = "hard"
       vim.g.gruvbox_material_enable_italic = true
-      vim.cmd.colorscheme("gruvbox-material")
+      -- vim.cmd.colorscheme("gruvbox-material")
+    end,
+  },
+  -- example lazy.nvim install setup
+  {
+    "slugbyte/lackluster.nvim",
+    lazy = false,
+    priority = 1000,
+    opts = {
+      tweak_ui = {
+        disable_undercurl = false,
+      },
+      tweak_background = {
+        normal = "none", -- main background
+        -- normal = 'none',    -- transparent
+        -- normal = '#a1b2c3',    -- hexcode
+        -- normal = color.green,    -- lackluster color
+        telescope = "none", -- telescope
+        menu = "none", -- nvim_cmp, wildmenu ... (bad idea to transparent)
+        popup = "none",
+      },
+    },
+
+    init = function()
+      -- vim.cmd.colorscheme("lackluster")
+      -- vim.cmd.colorscheme("lackluster-hack") -- my favorite
+      -- vim.cmd.colorscheme("lackluster-mint")
     end,
   },
 
   { "RRethy/base16-nvim" },
 
   {
+    "catppuccin/nvim",
+    name = "catppuccin",
+    priority = 1000,
+    config = function()
+      require("catppuccin").setup({
+        background = {
+          light = "latte",
+          dark = "mocha",
+        },
+        transparent_background = true,
+        dim_inactive = {
+          enabled = true,
+          shade = "dark",
+          percentage = 0.15,
+        },
+      })
+    end,
+  },
+
+  {
     "LazyVim/LazyVim",
     opts = {
+      colorscheme = "catppuccin",
+      -- colorscheme = "base16-solarized-light",
+      -- colorscheme = "deepwhite",
       -- colorscheme = "nord",
     },
   },

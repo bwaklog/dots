@@ -134,7 +134,10 @@ return {
         "typescript",
         "vim",
         "yaml",
+        "asm",
       },
+      ident = { enabled = true },
+      highlight = { enabled = true },
     },
   },
 
