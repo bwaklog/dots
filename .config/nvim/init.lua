@@ -15,3 +15,8 @@ vim.wo.relativenumber = false
 
 -- vim.opt.colorcolumn = "80"
 -- vim.api.nvim_set_hl(0, "ColorColumn", { bg = "#3c3836" })
+
+vim.opt.laststatus = 2
+
+vim.api.nvim_set_hl(0, "StatuslineGit", { fg = "#191724", bg = "#eb6f92" })
+vim.opt.statusline = " [%{mode()}] %f %m %#StatuslineGit#%{get(b:,'gitsigns_status','')}%* %= %l:%c ♥  "

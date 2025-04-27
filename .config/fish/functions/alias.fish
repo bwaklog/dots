@@ -3,6 +3,10 @@ function xssh
     ssh $argv
 end
 
+function vi
+    nvim $argv
+end
+
 ################################
 # git aliases                  #
 ################################

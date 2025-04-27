@@ -7,11 +7,4 @@ return {
     "folke/noice.nvim",
     enabled = false,
   },
-  {
-    "folke/snacks.nvim",
-    opts = {
-      scroll = { enabled = false },
-      dashboard = { enabled = false },
-    },
-  },
 }

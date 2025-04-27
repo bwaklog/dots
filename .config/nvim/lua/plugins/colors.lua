@@ -4,7 +4,33 @@ return {
     name = "rose-pine",
     opts = {
       styles = {
+        bold = true,
+        italic = true,
         transparency = true,
+      },
+
+      highlight_groups = {
+        -- accented statusline
+        StatusLine = { fg = "love", bg = "love", blend = 10 },
+        StatusLineNC = { fg = "subtle", bg = "surface" },
+
+        -- leafy search
+        CurSearch = { fg = "base", bg = "leaf", inherit = false },
+        Search = { fg = "text", bg = "leaf", blend = 20, inherit = false },
+
+        -- borderless transparent
+        TelescopeBorder = { fg = "overlay", bg = "overlay" },
+        TelescopeNormal = { fg = "subtle", bg = "overlay" },
+        TelescopeSelection = { fg = "text", bg = "highlight_med" },
+        TelescopeSelectionCaret = { fg = "love", bg = "highlight_med" },
+        TelescopeMultiSelection = { fg = "text", bg = "highlight_high" },
+
+        TelescopeTitle = { fg = "base", bg = "love" },
+        TelescopePromptTitle = { fg = "base", bg = "pine" },
+        TelescopePreviewTitle = { fg = "base", bg = "iris" },
+
+        TelescopePromptNormal = { fg = "text", bg = "surface" },
+        TelescopePromptBorder = { fg = "surface", bg = "surface" },
       },
     },
   },
@@ -103,18 +129,27 @@ return {
           enabled = true,
           shade = "dark",
           percentage = 0.15,
+          transparent_background = true,
         },
       })
     end,
   },
 
   {
+    "vague2k/vague.nvim",
+    config = function()
+      -- NOTE: you do not need to call setup if you don't want to.
+      require("vague").setup({
+        transparent = true,
+      })
+    end,
+  },
+  {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "catppuccin",
-      -- colorscheme = "base16-solarized-light",
-      -- colorscheme = "deepwhite",
-      -- colorscheme = "nord",
+      -- colorscheme = "catppuccin",
+      -- colorscheme = "vague",
+      colorscheme = "rose-pine",
     },
   },
 }

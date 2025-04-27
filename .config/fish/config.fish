@@ -20,6 +20,8 @@ if status is-interactive
     set -U fish_user_paths $PYENV_ROOT/bin $fish_user_paths
     pyenv init - fish | source
 
+    set HOMEBREW_NO_ENV_HINTS
+
     source $HOME/.config/fish/functions/alias.fish
 
     fzf --fish | source
