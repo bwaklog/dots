@@ -1,9 +1,0 @@
-I am currently using stow to mangage all the dotfiles. 
-Clone this repo at any folder and run
-
-	stow .
-
-to produce symlinks in the correct folders to all the
-dotfiles. To clean up the symlinks use
-
-	stow -D .
