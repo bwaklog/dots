@@ -27,20 +27,6 @@ return {
           },
           {
             pane = 2,
-            icon = " ",
-            title = "Git Status",
-            section = "terminal",
-            enabled = function()
-              return Snacks.git.get_root() ~= nil
-            end,
-            cmd = "git status --short --branch --renames",
-            height = 5,
-            padding = 1,
-            ttl = 5 * 60,
-            indent = 3,
-          },
-          {
-            pane = 2,
             icon = "",
             title = "Git Log",
             section = "terminal",
@@ -48,6 +34,33 @@ return {
               return Snacks.git.get_root() ~= nil
             end,
             cmd = "git log --oneline --graph --decorate -n 7",
+            height = 10,
+            padding = 1,
+            ttl = 1,
+            indent = 3,
+          },
+          -- {
+          --   pane = 2,
+          --   icon = " ",
+          --   title = "Git Status",
+          --   section = "terminal",
+          --   enabled = function()
+          --     return Snacks.git.get_root() ~= nil
+          --   end,
+          --   cmd = "git status --short --branch --renames",
+          --   height = 10,
+          --   padding = 1,
+          --   indent = 3,
+          -- },
+          {
+            pane = 2,
+            icon = "",
+            title = "Git Diff",
+            section = "terminal",
+            enabled = function()
+              return Snacks.git.get_root() ~= nil
+            end,
+            cmd = "git diff --stat",
             height = 10,
             padding = 1,
             ttl = 1,
