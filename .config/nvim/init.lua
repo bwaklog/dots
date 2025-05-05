@@ -19,4 +19,5 @@ vim.wo.relativenumber = false
 vim.opt.laststatus = 2
 
 vim.api.nvim_set_hl(0, "StatuslineGit", { fg = "#191724", bg = "#eb6f92" })
-vim.opt.statusline = " [%{mode()}] %f %m %#StatuslineGit#%{get(b:,'gitsigns_status','')}%* %= %l:%c ♥  "
+vim.opt.statusline =
+  " [%{mode()}]%h %f %m%r %#StatuslineGit#%{get(b:,'gitsigns_status','')}%* %= %y %{&fileencoding} %l:%c ♥  "

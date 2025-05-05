@@ -13,6 +13,12 @@ vim.opt.shiftwidth = 2
 vim.keymap.set("v", "<", "<gv", { noremap = true, silent = true })
 vim.keymap.set("v", ">", ">gv", { noremap = true, silent = true })
 
+vim.opt.laststatus = 2
+
+vim.api.nvim_set_hl(0, "StatuslineGit", { fg = "#191724", bg = "#eb6f92" })
+vim.opt.statusline =
+	" [%{mode()}]%h %f %m%r %#StatuslineGit#%{get(b:,'gitsigns_status','')}%* %= %y %{&fileencoding} %l:%c ♥  "
+
 -- ///////////////////////////////
 -- CONFIG: LSP Configuratio
 -- ///////////////////////////////
@@ -22,7 +28,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
 	callback = function(ev)
 		local client = vim.lsp.get_client_by_id(ev.data.client_id)
 		if client:supports_method("textDocument/completion") then
-			vim.lsp.completion.enable(true, client.id, ev.buf, { autotrigger = true })
+			vim.lsp.completion.enable(true, client.id, ev.buf, { autotrigger = false })
 		end
 	end,
 })
@@ -30,7 +36,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
 vim.o.winborder = "rounded"
 
 -- virtual line diagnostics
-vim.diagnostic.config({ virtual_lines = true })
+-- vim.diagnostic.config({ virtual_lines = true })
 
 -- lsp config per language
 require("lspconfig").lua_ls.setup({
@@ -119,6 +125,14 @@ require("lazy").setup({
 		-- ///////////////////////////////
 
 		{
+		  "ibhagwan/fzf-lua",
+		  -- optional for icon support
+		  dependencies = { "nvim-tree/nvim-web-devicons" },
+		  -- or if using mini.icons/mini.nvim
+		  -- dependencies = { "echasnovski/mini.icons" },
+		  opts = {}
+		},
+		{
 			"folke/which-key.nvim",
 			event = "VeryLazy",
 			opts = {
@@ -135,6 +149,28 @@ require("lazy").setup({
 					desc = "Buffer Local Keymaps (which-key)",
 				},
 			},
+		},
+		{
+		  "hrsh7th/nvim-cmp",
+		  version = false, -- last release is way too old
+		  event = "InsertEnter",
+		  dependencies = {
+		    "hrsh7th/cmp-nvim-lsp",
+		    "hrsh7th/cmp-buffer",
+		    "hrsh7th/cmp-path",
+		  },
+		  opts = function()
+		    vim.api.nvim_set_hl(0, "CmpGhostText", { link = "Comment", default = true })
+		    local cmp = require("cmp")
+		    local defaults = require("cmp.config.default")()
+		    local auto_select = true
+		    return {
+		      auto_brackets = {},
+		      completion = {
+			completeopt = "menu,menuone,noinsert" .. (auto_select and "" or ",noselect"),
+		      },
+		    }
+		  end,
 		},
 
 		{
@@ -222,19 +258,43 @@ require("lazy").setup({
 				vim.g.gruvbox_material_enable_bold = 1
 				vim.g.gruvbox_material_background = "hard"
 				vim.g.gruvbox_material_enable_italic = true
-				vim.cmd.colorscheme("gruvbox-material")
+				-- vim.cmd.colorscheme("gruvbox-material")
 			end,
 		},
-
 		{
-			"slugbyte/lackluster.nvim",
-			lazy = false,
-			priority = 1000,
-			init = function()
-				-- vim.cmd.colorscheme("lackluster")
-				-- vim.cmd.colorscheme("lackluster-hack") -- my favorite
-				-- vim.cmd.colorscheme("lackluster-mint")
-			end,
+		  "rose-pine/neovim",
+		  name = "rose-pine",
+		  opts = {
+		    styles = {
+		      bold = true,
+		      italic = true,
+		      transparency = true,
+		    },
+
+		    highlight_groups = {
+		      -- accented statusline
+		      StatusLine = { fg = "love", bg = "love", blend = 10 },
+		      StatusLineNC = { fg = "subtle", bg = "surface" },
+
+		      -- leafy search
+		      CurSearch = { fg = "base", bg = "leaf", inherit = false },
+		      Search = { fg = "text", bg = "leaf", blend = 20, inherit = false },
+
+		      -- borderless transparent
+		      TelescopeBorder = { fg = "overlay", bg = "overlay" },
+		      TelescopeNormal = { fg = "subtle", bg = "overlay" },
+		      TelescopeSelection = { fg = "text", bg = "highlight_med" },
+		      TelescopeSelectionCaret = { fg = "love", bg = "highlight_med" },
+		      TelescopeMultiSelection = { fg = "text", bg = "highlight_high" },
+
+		      TelescopeTitle = { fg = "base", bg = "love" },
+		      TelescopePromptTitle = { fg = "base", bg = "pine" },
+		      TelescopePreviewTitle = { fg = "base", bg = "iris" },
+
+		      TelescopePromptNormal = { fg = "text", bg = "surface" },
+		      TelescopePromptBorder = { fg = "surface", bg = "surface" },
+		    },
+		  },
 		},
 	},
 	-- Configure any other settings here. See the documentation for more details.
@@ -243,3 +303,7 @@ require("lazy").setup({
 	-- automatically check for plugin updates
 	checker = { enabled = true },
 })
+
+vim.cmd.colorscheme("rose-pine")
+
+-- keymaps
