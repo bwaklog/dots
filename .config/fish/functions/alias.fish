@@ -7,6 +7,10 @@ function vi
     nvim $argv
 end
 
+function alpine
+    sudo docker run --rm -it alp
+end
+
 ################################
 # git aliases                  #
 ################################
