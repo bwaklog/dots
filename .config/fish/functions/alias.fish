@@ -4,7 +4,12 @@ function xssh
 end
 
 function vi
-    nvim $argv
+    # nvim $argv
+    NVIM_APPNAME=sloth nvim $argv
+end
+
+function nvim_lazy
+     nvim $argv
 end
 
 function alpine
