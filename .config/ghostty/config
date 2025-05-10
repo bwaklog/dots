@@ -8,6 +8,8 @@ macos-titlebar-style = transparent
 # window-decoration = false
 # macos-titlebar-style = hidden
 unfocused-split-opacity = 1
+# background-opacity = 0.90
+# background-blur = true
 window-padding-x = 10
 window-padding-y = 10
 
