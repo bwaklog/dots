@@ -1,14 +1,22 @@
+# theme = dark:GruvboxDarkHard,light:GruvboxLightHard
 theme = rose-pine
+theme = GruvboxDarkHard
+theme = Kanagawa Dragon
 background = 0D0D0D
 
-font-family = JetBrainsMono Nerd Font
-font-size = 13
+# font-family = JetBrainsMono Nerd Font
+# font-family = JuliaMono 
+font-family = PragmataProMonoLiga Nerd Font 
+font-size = 15
 
 macos-titlebar-style = transparent
 # window-decoration = false
-# macos-titlebar-style = hidden
-unfocused-split-opacity = 1
-# background-opacity = 0.90
+macos-titlebar-style = hidden
+unfocused-split-opacity = 0.50
+split-divider-color=4F4F4F
+
+
+# background-opacity = 0.94
 # background-blur = true
 window-padding-x = 10
 window-padding-y = 10
@@ -27,3 +35,5 @@ copy-on-select = true
 quick-terminal-screen = mouse
 quick-terminal-position = center
 mouse-hide-while-typing = true
+
+macos-icon = blueprint

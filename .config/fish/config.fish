@@ -20,6 +20,9 @@ if status is-interactive
     set -U fish_user_paths $PYENV_ROOT/bin $fish_user_paths
     pyenv init - fish | source
 
+    set PICO_SDK_PATH /Users/grogu/dev/work/pil/clones/pico/pico-sdk/
+    set ARM_NONE_EABI_PATH /Users/grogu/Downloads/gcc-arm-none-eabi/arm-none-eabi/include/
+
     set HOMEBREW_NO_ENV_HINTS 1
 
     source $HOME/.config/fish/functions/alias.fish
@@ -27,6 +30,12 @@ if status is-interactive
     fzf --fish | source
 
     set -g fish_key_bindings fish_vi_key_bindings
+end
+
+function fish_greeting
+    # pfetch
+    fortune
+    uptime
 end
 
 function code
@@ -45,3 +54,6 @@ source ~/.orbstack/shell/init2.fish 2>/dev/null || :
 # bun
 set --export BUN_INSTALL "$HOME/.bun"
 set --export PATH $BUN_INSTALL/bin $PATH
+
+set -q GHCUP_INSTALL_BASE_PREFIX[1]; or set GHCUP_INSTALL_BASE_PREFIX $HOME
+set -gx PATH $HOME/.cabal/bin /Users/grogu/.ghcup/bin $PATH # ghcup-env
