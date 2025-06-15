@@ -65,7 +65,7 @@ set wildmenu
 set hlsearch
 set incsearch
 " clear the search with <leader>n
-nnoremap <leader>n :nohlsearch<CR>
+nnoremap <Esc> :nohlsearch<CR><Esc>
 
 
 " ==================

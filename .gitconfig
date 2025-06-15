@@ -1,6 +1,6 @@
 [user]
   name = "Aditya Hegde"
-  email = "aditya.mh@outlook.com"
+  email = "burrawta@gmail.com"
   signingKey = ~/.ssh/id_ed25519.pub
 [init]
   defaultBranch = main

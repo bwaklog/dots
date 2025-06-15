@@ -8,12 +8,25 @@ function vi
     NVIM_APPNAME=sloth nvim $argv
 end
 
+function v
+    # nvim $argv
+    NVIM_APPNAME=sloth nvim $argv
+end
+
 function nvim_lazy
      nvim $argv
 end
 
 function alpine
     sudo docker run --rm -it alp
+end
+
+function pdfcombine
+    /System/Library/Automator/Combine\ PDF\ Pages.action/Contents/MacOS/join $argv
+end
+
+function pdfread
+    set base_path Library/Mobile\ Documents/com~apple~CloudDocs/PESU
 end
 
 ################################
