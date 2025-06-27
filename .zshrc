@@ -18,14 +18,41 @@ export PATH=$NVM_DIR:$PATH
 
 eval "$(pyenv init -)"
 
+export PATH="/opt/homebrew/bin":$PATH
+
+alias orb="TERM=xterm-256color orb"
+
+# QOL Alias
+alias ll="ls -lh"
+alias la="ls -lah"
+alias v="NVIM_APPNAME=sloth nvim"
+alias pdfcombine="/System/Library/Automator/Combine\ PDF\ Pages.action/Contents/MacOS/join"
+
+# QOL git
+alias gs="git status"
+alias gl="git log"
+alias glog="git log --online --graph"
+alias glogda="git log --online --graph --decorate --abbrev"
+alias ga="git add"
+alias gaa="git add --all"
+alias gc="git commit"
+alias gcan="git commit --amend --no-edit"
+alias gp="git push"
+
+# set vim mode
 set -o vi
-
-export PICO_SDK_PATH="$HOME/dev/work/pil/pico/pico-sdk"
-export ARM_NONE_EABI_PATH="$HOME/dev/work/pil/pico/gcc-arm-none-eabi/arm-none-eabi/include/"
-
-# ARM_NONE_EABI_BIN_PATH="$HOME/dev/work/pil/pico/gcc-arm-none-eabi/bin/"
-# export PATH=$ARM_NONE_EABI_PATH:$PATH
-
+# set edit in vim with ^X^E
 autoload -z edit-command-line
 zle -N edit-command-line
 bindkey "^X^E" edit-command-line
+
+# initialization of zsh completion system
+autoload -U compinit && compinit
+
+# start zsh-autosuggestion
+source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+# zsh prompts
+autoload -Uz promptinit
+promptinit
+prompt redhat
