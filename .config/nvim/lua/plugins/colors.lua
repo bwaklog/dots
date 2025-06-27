@@ -36,6 +36,18 @@ return {
   },
 
   {
+    "folke/tokyonight.nvim",
+    lazy = false,
+    priority = 1000,
+    opts = {
+      style = "night",
+      transparent = false,
+      sidebars = "normal", -- style for sidebars, see below
+      floats = "normal",
+    },
+  },
+
+  {
     "shaunsingh/nord.nvim",
     config = function()
       vim.g.nord_disable_background = true
@@ -57,18 +69,19 @@ return {
   {
     "rebelot/kanagawa.nvim",
     config = function()
-      -- require("kanagawa").setup({
-      --   dimInactive = true,
-      --   colors = {
-      --     theme = { all = { ui = { bg_gutter = "none" } } },
-      --   },
-      --   transparent = true,
-      -- })
-      -- if vim.o.background == "light" then
-      --   vim.cmd.colorscheme("kanagawa-wave")
-      -- else
-      --   vim.cmd.colorscheme("kanagawa-dragon")
-      -- end
+      --@allow
+      require("kanagawa").setup({
+        transparent = true,
+        colors = {
+          theme = {
+            all = {
+              ui = {
+                bg_gutter = "none",
+              },
+            },
+          },
+        },
+      })
     end,
   },
 
@@ -148,6 +161,8 @@ return {
   {
     "LazyVim/LazyVim",
     opts = {
+      -- colorscheme = "nord",
+      -- colorscheme = "kanagawa-dragon",
       -- colorscheme = "catppuccin",
       -- colorscheme = "vague",
       -- colorscheme = "rose-pine",

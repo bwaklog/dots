@@ -1,5 +1,5 @@
 # theme = "default"
-# theme = "rose_pine"
+theme = "rose_pine"
 # theme = "merionette"
 
 # Yoinked off config for vim-like keybindings

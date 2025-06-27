@@ -18,7 +18,7 @@ set noundofile
 set relativenumber number
 syntax on
 set ignorecase
-set termguicolors
+" set termguicolors
 
 set tabstop=4
 set softtabstop=4

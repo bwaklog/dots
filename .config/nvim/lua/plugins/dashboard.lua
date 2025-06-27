@@ -19,12 +19,12 @@ return {
       dashboard = {
         enabled = true,
         sections = {
-          {
-            section = "terminal",
-            cmd = "chafa ~/.config/nvim/grogu.jpg --format symbols --symbols vhalf --size=45; sleep .1",
-            height = 17,
-            padding = 1,
-          },
+          -- {
+          --   section = "terminal",
+          --   cmd = "chafa ~/.config/nvim/grogu.jpg --format symbols --symbols vhalf --size=45; sleep .1",
+          --   height = 17,
+          --   padding = 1,
+          -- },
           {
             pane = 2,
             icon = "",
@@ -53,7 +53,7 @@ return {
           --   indent = 3,
           -- },
           {
-            pane = 2,
+            pane = 1,
             icon = "",
             title = "Git Diff",
             section = "terminal",
@@ -66,7 +66,7 @@ return {
             ttl = 1,
             indent = 3,
           },
-          { pane = 2, section = "startup" },
+          { pane = 1, section = "startup" },
           -- {
           --   pane = 2,
           --   { section = "keys", gap = 1, padding = 1 },

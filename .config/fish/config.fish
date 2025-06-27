@@ -20,8 +20,7 @@ if status is-interactive
     set -U fish_user_paths $PYENV_ROOT/bin $fish_user_paths
     pyenv init - fish | source
 
-    set PICO_SDK_PATH /Users/grogu/dev/work/pil/clones/pico/pico-sdk/
-    set ARM_NONE_EABI_PATH /Users/grogu/Downloads/gcc-arm-none-eabi/arm-none-eabi/include/
+    # starship init fish | source 
 
     set HOMEBREW_NO_ENV_HINTS 1
 
