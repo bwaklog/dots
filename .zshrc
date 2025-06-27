@@ -1,5 +1,5 @@
 source <(fzf --zsh)
-# eval "$(starship init zsh)"
+eval "$(starship init zsh)"
 
 # alias source
 source $HOME/.alias
@@ -18,14 +18,19 @@ export PATH=$NVM_DIR:$PATH
 
 eval "$(pyenv init -)"
 
+export PATH="/opt/homebrew/bin":$PATH
+
+alias orb="TERM=xterm-256color orb"
+
+# set vim mode
 set -o vi
-
-export PICO_SDK_PATH="$HOME/dev/work/pil/pico/pico-sdk"
-export ARM_NONE_EABI_PATH="$HOME/dev/work/pil/pico/gcc-arm-none-eabi/arm-none-eabi/include/"
-
-# ARM_NONE_EABI_BIN_PATH="$HOME/dev/work/pil/pico/gcc-arm-none-eabi/bin/"
-# export PATH=$ARM_NONE_EABI_PATH:$PATH
-
+# set edit in vim with ^X^E
 autoload -z edit-command-line
 zle -N edit-command-line
 bindkey "^X^E" edit-command-line
+
+# initialization of zsh completion system
+autoload -U compinit && compinit
+
+# start zsh-autosuggestion
+source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh

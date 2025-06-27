@@ -3,22 +3,26 @@ padding.x = 5
 padding.y = 5
 dynamic_padding = true
 
-decorations = "buttonless"
+decorations = "full"
 
-opacity = 0.98
-blur = true
+# opacity = 0.98
+# blur = true
 
 [env]
 term = "xterm-256color"
 
 [font]
-normal.family = "BerkeleyMono Nerd Font Mono"
-bold.family = "BerkeleyMono Nerd Font Mono"
-italic.family = "BerkeleyMono Nerd Font Mono"
-bold_italic.family = "BerkeleyMono Nerd Font Mono"
+# normal.family = "JuliaMono"
+# bold.family = "JuliaMono"
+# italic.family = "JuliaMono"
+# bold_italic.family = "JuliaMono"
+# size = 17.0
 
-
-size = 14.0
+normal.family = "PragmataProMonoLiga Nerd Font"
+bold.family = "PragmataProMonoLiga Nerd Font"
+italic.family = "PragmataProMonoLiga Nerd Font"
+bold_italic.family = "PragmataProMonoLiga Nerd Font"
+size = 17.0
 
 [cursor]
 style.blinking = "Always"
@@ -36,8 +40,4 @@ style.blinking = "Always"
 
 live_config_reload = true
 
-# import = ["~/alacritty-theme/themes/gruvbox_material.toml"]
-# import = ["~/alacritty-theme/themes/rose-pine-moon.toml"]
-# import = ["~/alacritty-theme/themes/pastel_dark.toml"]
-import = ["~/alacritty-theme/themes/rose-pine.toml"]
-# import = ["~/alacritty-theme/themes/rose-pine-dawn.toml"]
+# import = ["~/.config/alacritty/themes/themes/gruber_darker.toml"]

@@ -19,12 +19,12 @@ return {
       dashboard = {
         enabled = true,
         sections = {
-          {
-            section = "terminal",
-            cmd = "chafa ~/.config/nvim/grogu.jpg --format symbols --symbols vhalf --size=45; sleep .1",
-            height = 17,
-            padding = 1,
-          },
+          -- {
+          --   section = "terminal",
+          --   cmd = "chafa ~/.config/nvim/grogu.jpg --format symbols --symbols vhalf --size=45; sleep .1",
+          --   height = 17,
+          --   padding = 1,
+          -- },
           {
             pane = 2,
             icon = "",
