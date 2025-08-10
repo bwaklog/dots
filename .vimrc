@@ -31,6 +31,7 @@ set smartindent
 " ===================
 
 colorscheme habamax
+" colorscheme quiet
 
 " Make background transparent
 highlight Normal       guibg=NONE ctermbg=NONE
@@ -43,7 +44,7 @@ highlight FloatBorder  guibg=NONE ctermbg=NONE
 highlight Visual       guibg=#403d52 guifg=NONE gui=NONE
 
 " Define the highlight group for Git status segment
-highlight StatuslineGit guifg=#191724 guibg=#eb6f92
+" highlight StatuslineGit guifg=#191724 guibg=#eb6f92
 
 " Set the statusline
 set laststatus=2
@@ -52,7 +53,6 @@ set statusline=\ [%{mode()}]%h%m%r\ %*%=%y\ %{&fileencoding}\ %l:%c\
 " set list
 " set showbreak=↪
 " set listchars=tab:→\ ,eol:↲,nbsp:␣,trail:•,extends:⟩,precedes:⟨
-" set background=dark
 
 filetype plugin on
 

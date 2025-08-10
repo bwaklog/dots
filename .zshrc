@@ -19,6 +19,7 @@ export PATH=$NVM_DIR:$PATH
 eval "$(pyenv init -)"
 
 export PATH="/opt/homebrew/bin":$PATH
+export PATH="$HOME/go/bin/":$PATH
 
 alias orb="TERM=xterm-256color orb"
 

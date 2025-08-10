@@ -2,7 +2,8 @@
 # theme = rose-pine-dawn
 # theme = Kanagawa Dragon
 # theme = GruvboxDarkHard
-theme = flexoki-light
+theme = light:flexoki-light,dark:flexoki-dark
+# theme = Builtin Solarized Light
 # theme = nord
 # theme = catppuccin-frappe
 # background = 000000
@@ -16,22 +17,23 @@ font-family = JetBrainsMono Nerd Font
 # font-family = BerkeleyMono Nerd Font Mono
 # font-family = Terminess Nerd Font Mono
 # font-family = CaskaydiaCove Nerd Font Mono
-font-family = Jawa
+# font-family = Jawa
 # font-family = Agave Nerd Font Mono
-font-size = 14
-font-style = medium
+font-size = 15
+font-style = bold
 
-# macos-titlebar-style = tabs
 macos-titlebar-style = native
+# macos-titlebar-style = tabs
 # macos-titlebar-style = hidden
 # window-decoration = true
 unfocused-split-opacity = 0.80
-split-divider-color=4F4F4F
+split-divider-color=C25648
+# split-divider-color=4F4F4F
 
 background-opacity = 0.98
 background-blur = true
-# window-padding-x = 10
-# window-padding-y = 10
+window-padding-x = 8
+window-padding-y = 8
 
 window-position-x = 300
 window-position-y = 70
