@@ -7,3 +7,4 @@ stow .
 stow -D .
 ```
 
+SE-TA

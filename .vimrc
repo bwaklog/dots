@@ -142,6 +142,10 @@ Plug 'jiangmiao/auto-pairs'
 "" Neotree
 Plug 'preservim/nerdtree'
 
+"" Theme
+" Plug 'sainnhe/gruvbox-material'
+" Plug 'nordtheme/vim'
+
 nnoremap <leader>e :NERDTreeToggle<CR>
 
 " -----------------------------
@@ -165,3 +169,5 @@ nnoremap <silent> <leader> :WhichKey '<Space>'<CR>
 set timeoutlen=500
 
 call plug#end()
+
+" colorscheme nord
