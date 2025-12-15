@@ -1,27 +1,28 @@
 source <(fzf --zsh)
-eval "$(jenv init -)"
+
+# Shell Prompt
 eval "$(starship init zsh)"
 
-# alias source
-# source $HOME/.alias
-# source $HOME/shorts.sh
+# zsh prompts
+# autoload -Uz promptinit
+# promptinit
+# prompt redhat
+# setopt prompt_sp
+
 
 # plugins & extensions
-autoload -U compinit; compinit
+autoload -U compinit && compinit
 source $HOME/.zsh_plugins/fzf-tab/fzf-tab.plugin.zsh
+zstyle ':fzf-tab:*' fzf-command ftb-tmux-popup
+
 source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-# source $HOME/shorts.sh
+# source $(brew --prefix)/share/zsh-autocomplete/zsh-autocomplete.plugin.zsh
+source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
-# export PYENV_ROOT="$HOME/.pyenv"
-# [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
-# eval "$(pyenv init - zsh)"
-
-eval "$(mise activate zsh)"
 
 . "$HOME/.cargo/env"
 
 export PATH="/opt/homebrew/bin":$PATH
-# export PATH="$HOME/go/bin/":$PATH
 export PATH="$HOME/dev/aseprite/build/bin/":$PATH
 export PATH="/opt/homebrew/opt/postgresql@17/bin:$PATH"
 export PATH="/opt/homebrew/opt/postgresql@15/bin:$PATH"
@@ -45,7 +46,7 @@ alias orb="TERM=xterm-256color orb"
 # QOL Alias
 alias ll="ls -lh"
 alias la="ls -lah"
-alias v="NVIM_APPNAME=sloth nvim"
+alias v="nvim"
 alias pdfcombine="/System/Library/Automator/Combine\ PDF\ Pages.action/Contents/MacOS/join"
 
 # QOL git
@@ -71,28 +72,6 @@ autoload -z edit-command-line
 zle -N edit-command-line
 bindkey "^X^E" edit-command-line
 
-# initialization of zsh completion system
-autoload -U compinit && compinit
-
-# start zsh-autosuggestion
-# source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-
-# zsh prompts
-# autoload -Uz promptinit
-# promptinit
-# prompt redhat
-# setopt prompt_sp
 
 eval "$(zoxide init zsh)"
-# source ~/.local/share/zsh/zoxide/z.zsh
-source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-# source /opt/homebrew/share/zsh-autocomplete/zsh-autocomplete.plugin.zsh
-
-if [[ -f $HOME/sophos.sh ]]; then
-    source $HOME/sophos.sh
-fi
-
-if [[ -f $HOME/dev/scam/commit.sh ]]; then
-    source $HOME/dev/scam/commit.sh
-fi
+eval "$(mise activate zsh)"
