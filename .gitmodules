@@ -1,3 +1,0 @@
-[submodule ".config/sloth"]
-	path = .config/sloth
-	url = git@github.com:bwaklog/sloth.git

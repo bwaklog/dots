@@ -1,36 +1,17 @@
-# theme = dark:Gruvbox Dark Hard,light:Gruvbox Light Hard
-# theme = dark:Apple System Colors,light:Apple System Colors Light
-# theme = Kanagawa Dragon
-# theme = dark:Dark Pastel,light:Adwaita
-# theme = Dark Pastel
-# theme = Flexoki Dark
-# background = #0e0908
-
-# gruvbox dark
-theme = Gruvbox Material Dark
-background = #1E2021
-# background = #1D2021
-
-# background = #000000
-# font-family = Departure Mono
+background = #000000
 font-family = JuliaMono
-# font-family = NewComputerModernMono10
-font-size = 15
-# font-style = Bold
+font-size = 18
 
 
 macos-titlebar-style = hidden
-# window-decoration = true
 unfocused-split-opacity = 1.00
 split-divider-color=C25648
 
-# background-opacity = 0.90
-# background-blur = true
+background-opacity = 0.87
+background-blur = true
 window-padding-x = 8
 window-padding-y = 8
 
-# window-position-x = 300
-# window-position-y = 70
 resize-overlay = always
 
 keybind = global:ctrl+q=toggle_quick_terminal
@@ -42,6 +23,5 @@ keybind = ctrl+shift+k=goto_split:top
 copy-on-select = true
 quick-terminal-screen = mouse
 quick-terminal-position = center
-quick-terminal-size = 40%,70%
 
 mouse-hide-while-typing = true
