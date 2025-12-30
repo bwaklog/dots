@@ -1,5 +1,5 @@
 background = #000000
-font-family = JuliaMono
+font-family = Liga SFMono Nerd Font
 font-size = 18
 
 
@@ -7,8 +7,8 @@ macos-titlebar-style = hidden
 unfocused-split-opacity = 1.00
 split-divider-color=C25648
 
-background-opacity = 0.87
-background-blur = true
+# background-opacity = 0.90
+background-blur = false
 window-padding-x = 8
 window-padding-y = 8
 

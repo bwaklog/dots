@@ -6,5 +6,3 @@ This repository uses [GNU stow](https://www.gnu.org/software/stow/) for managing
 stow .
 stow -D .
 ```
-
-SE-TA

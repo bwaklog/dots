@@ -62,6 +62,7 @@ alias fancy_log='git log --all --graph --pretty=format:"%h %an %ad %s" --date=sh
 alias gp="git push"
 
 alias acpi='system_profiler SPPowerDataType | grep "Cycle Count"'
+alias tailscale="/Applications/Tailscale.app/Contents/MacOS/Tailscale"
 
 export EDITOR=nvim
 
@@ -75,3 +76,6 @@ bindkey "^X^E" edit-command-line
 
 eval "$(zoxide init zsh)"
 eval "$(mise activate zsh)"
+
+# Created by `pipx` on 2025-12-24 16:00:03
+export PATH="$PATH:/Users/grogu/.local/bin"
