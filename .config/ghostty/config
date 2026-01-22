@@ -1,5 +1,8 @@
 background = #000000
-font-family = Liga SFMono Nerd Font
+# font-family = Liga SFMono Nerd Font
+# font-family = BerkeleyMono Nerd Font Mono
+font-family = Monaspace Argon Var
+font-feature = +calt
 font-size = 18
 
 

@@ -30,6 +30,7 @@ export PATH="/opt/homebrew/opt/postgresql@15/bin:$PATH"
 export PATH="$HOME/.local/share/mise/shims/:$PATH"
 
 export PATH="/opt/homebrew/opt/openssl/bin/":$PATH
+export LESS='--mouse --wheel-lines=1'
 
 # homebrew curl
 # export PATH="/opt/homebrew/opt/curl/bin/":$PATH
@@ -61,6 +62,19 @@ alias gcan="git commit --amend --no-edit"
 alias fancy_log='git log --all --graph --pretty=format:"%h %an %ad %s" --date=short'
 alias gp="git push"
 
+ipv4 ()
+{
+    if [ -z "$1" ]; then
+        ifconfig "$(ifconfig -l | tr ' ' '\n' | fzf)" \
+            | grep 'inet ' \
+            | awk '{print $2}'
+    else
+        ifconfig "$1" \
+            | grep 'inet ' \
+            | awk '{print $2}'
+    fi
+}
+
 alias acpi='system_profiler SPPowerDataType | grep "Cycle Count"'
 alias tailscale="/Applications/Tailscale.app/Contents/MacOS/Tailscale"
 
@@ -79,3 +93,17 @@ eval "$(mise activate zsh)"
 
 # Created by `pipx` on 2025-12-24 16:00:03
 export PATH="$PATH:/Users/grogu/.local/bin"
+
+# bun completions
+[ -s "/Users/grogu/.bun/_bun" ] && source "/Users/grogu/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+
+proxy ()
+{
+    ssh -v -N -D 127.0.0.1:1080 \
+        adi@ssh.adihegde.com \
+        -o ProxyCommand="cloudflared access ssh --hostname ssh.adihegde.com"
+}

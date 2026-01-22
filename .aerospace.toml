@@ -12,12 +12,12 @@ on-focused-monitor-changed = ['move-mouse monitor-lazy-center']
 accordion-padding = 0
 
 [gaps]
-innser.horizontal = 0
-innser.vertical = 0
-outer.left = 0
-outer.bottom = 0
-outer.top = 0
-outer.right = 0
+inner.horizontal = 8
+inner.vertical = 8
+outer.left = 8
+outer.bottom = 4
+outer.top = 8
+outer.right = 8
 
 [mode.main.binding]
     # See: https://nikitabobko.github.io/AeroSpace/goodies#open-a-new-window-with-applescript
