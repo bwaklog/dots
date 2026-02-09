@@ -1,6 +1,8 @@
 [tools]
 java = { version = "openjdk-21" }
 bun = "latest"
+deno = "latest"
+node = "latest"
 python = "3.14.0"
 zig = "0.15.2"
 
