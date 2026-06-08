@@ -1,4 +1,4 @@
 # This file contains fish universal variable definitions.
 # VERSION: 3.0
 SETUVAR __fish_initialized:4300
-SETUVAR fish_user_paths:/bin\x1e/Users/grogu/\x2elocal/share/mise/shims\x1e/Users/grogu/\x2ebun/bin\x1e/Users/grogu/\x2elocal/bin\x1e/opt/homebrew/opt/openssl/bin\x1e/Users/grogu/dev/aseprite/build/bin\x1e/Users/grogu/\x2ecargo/bin\x1e/opt/homebrew/bin
+SETUVAR fish_user_paths:/opt/homebrew/opt/llvm/bin\x1e/Users/grogu/go/bin\x1e/bin\x1e/Users/grogu/\x2elocal/share/mise/shims\x1e/Users/grogu/\x2ebun/bin\x1e/Users/grogu/\x2elocal/bin\x1e/opt/homebrew/opt/openssl/bin\x1e/Users/grogu/dev/aseprite/build/bin\x1e/Users/grogu/\x2ecargo/bin\x1e/opt/homebrew/bin\x1e/Users/grogu/\x2efoundry/bin

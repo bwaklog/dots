@@ -1,0 +1,26 @@
+---
+BasedOnStyle: LLVM
+IndentWidth: 4
+---
+
+Language: C
+AlignArrayOfStructures: Left
+
+AlignConsecutiveAssignments:
+  Enabled: true
+  AcrossComments: false
+  AlignCompound: true
+
+AlignConsecutiveDeclarations:
+  Enabled: true
+
+AlignConsecutiveMacros:
+  Enabled: true
+
+AlignEscapedNewlines: Left
+
+AlignOperands: true
+
+AlignTrailingComments:
+  Kind: Always
+  OverEmptyLines: 2

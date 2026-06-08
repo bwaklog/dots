@@ -1,16 +1,12 @@
 [tools]
 java = { version = "openjdk-21" }
-bun = "latest"
 deno = "latest"
 node = "latest"
+bun = "latest"
 python = "3.14.0"
-zig = "0.15.2"
-
-# golang
-go = "latest"
+zig = "0.16.0"
+erlang = "latest"
+elixir = "latest"
+go = "1.26.2"
 golangci-lint = "latest"
 gofumpt = "latest"
-
-# mongodb
-mongodb = "8.1.2"
-mongosh = "latest"

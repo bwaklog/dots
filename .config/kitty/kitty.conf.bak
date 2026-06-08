@@ -1,11 +1,6 @@
-# font_family BlexMono Nerd Font Mono
-# font_family SauceCodePro Nerd Font Mono
-# font_family Iosevka PragmataPro
-# font_family PragmataProMonoLiga Nerd Font
-
 font_size 15.0
 map ctrl+c send_text all \x03
-# enabled_layouts grid
+enabled_layouts grid
 # macos_titlebar_color background
 # hide_window_decorations titlebar-and-corners
 hide_window_decorations titlebar-only
@@ -26,10 +21,6 @@ macos_traditional_fullscreen no
 window_padding_width 5
 
 # key bindings
-map super+d launch --location=hsplit
-map super+Shift+d launch --location=vsplit
-map f4 launch --location=split
-map f7 layout_action rotate
 map shift+up move_window up
 map shift+left move_window left
 map shift+right move_window right
@@ -46,7 +37,8 @@ map ctrl+up neighboring_window up
 map ctrl+down neighboring_window down
 
 map cmd+t new_tab_with_cwd
-map cmd+d launch --location=split --cwd=current
+map cmd+d launch --location=hsplit --cwd=current
+map cmd+Shift+d launch --location=vsplit --cwd=current
 
 confirm_os_window_close 0
 
@@ -70,7 +62,7 @@ background #000000
 # background #000000
 
 # BEGIN_KITTY_FONTS
-font_family      family="Monaspace Argon Var"
+font_family      family="Java"
 bold_font        auto
 italic_font      auto
 bold_italic_font auto

@@ -1,22 +1,30 @@
+add_newline = false
 format = """
-$username\
-$hostname\
+$username@$hostname \
 $directory\
 $git_branch\
 $git_state\
 $git_status\
 $cmd_duration\
-$line_break\
 $python\
-$character"""
+\\$ 
+"""
+
+[username]
+show_always = true
+format = '$user'
+
+[hostname]
+ssh_only = false
+format = '$hostname'
 
 [directory]
-style = "blue"
+style = "white"
 
-[character]
-success_symbol = "[❯](purple)"
-error_symbol = "[❯](red)"
-vimcmd_symbol = "[❮](green)"
+# [character]
+# success_symbol = "[%](white)"
+# error_symbol = "[%](white)"
+# vimcmd_symbol = "[%](white)"
 
 [git_branch]
 format = "[$branch]($style)"

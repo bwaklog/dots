@@ -7,16 +7,26 @@ fish_add_path /opt/homebrew/opt/openssl/bin
 fish_add_path "$HOME/.local/bin"
 fish_add_path "$BUN_INSTALL/bin"
 fish_add_path "$HOME/.local/share/mise/shims"
+fish_add_path "/opt/homebrew/opt/llvm/bin"
 
 if status is-interactive
+    # keychain
+    ssh-add --apple-load-keychain -q
+
     # Commands to run in interactive sessions can go here
     starship init fish | source
     zoxide init fish | source
     mise activate fish | source
 
+    # kobernetix
+    kubectl completion fish | source
+    minikube completion fish | source
+
+    source $HOME/.turso/env.fish
+
     fish_vi_key_bindings
 
-    fzf --fish | source
+    # fzf --fish | source
 end
 
 set fish_greeting ""
@@ -29,6 +39,7 @@ abbr -a la "ls -lah"
 abbr -a v nvim
 abbr -a vim nvim
 abbr -a pdfcombine "/System/Library/Automator/Combine\ PDF\ Pages.action/Contents/MacOS/join"
+abbr -a bat "bat --number"
 
 # Git QOL
 abbr -a gs "git status"
@@ -70,6 +81,26 @@ function fish
     source ~/.config/fish/config.fish
 end
 
+function obsidian
+    "/Applications/Obsidian.app/Contents/MacOS/Obsidian"
+end
+
+function pdf_dir_stat
+    set total 0
+
+    for pdf in *.pdf
+        set pages (pdfinfo "$pdf" | grep "^Pages:" | awk '{print $2}')
+        echo "$pdf : $pages pages"
+        set total (math $total + $pages)
+    end
+
+    echo "Total pages: $total"
+end
+
 # Added by OrbStack: command-line tools and integration
 # This won't be added again if you remove it.
 source ~/.orbstack/shell/init2.fish 2>/dev/null || :
+
+fish_add_path -a "/Users/grogu/.foundry/bin"
+
+fish_add_path -a "/Users/grogu/.foundry/bin"

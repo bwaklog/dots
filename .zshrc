@@ -1,11 +1,11 @@
 source <(fzf --zsh)
 
 # Shell Prompt
-eval "$(starship init zsh)"
+# eval "$(starship init zsh)"
 
 # zsh prompts
-# autoload -Uz promptinit
-# promptinit
+autoload -Uz promptinit
+promptinit
 # prompt redhat
 # setopt prompt_sp
 
@@ -31,6 +31,12 @@ export PATH="$HOME/.local/share/mise/shims/:$PATH"
 
 export PATH="/opt/homebrew/opt/openssl/bin/":$PATH
 export LESS='--mouse --wheel-lines=1'
+
+# llvm via homebrew
+export PATH="/opt/homebrew/opt/llvm/bin":$PATH
+# For compilers to find llvm you may need to set:
+#  set -gx LDFLAGS "-L/opt/homebrew/opt/llvm/lib"
+#  set -gx CPPFLAGS "-I/opt/homebrew/opt/llvm/include"
 
 # homebrew curl
 # export PATH="/opt/homebrew/opt/curl/bin/":$PATH
@@ -107,3 +113,5 @@ proxy ()
         adi@ssh.adihegde.com \
         -o ProxyCommand="cloudflared access ssh --hostname ssh.adihegde.com"
 }
+
+. "$HOME/.turso/env"
